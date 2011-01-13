@@ -26,6 +26,8 @@ gem 'devise'
 gem 'formtastic'
 gem 'bluecloth', '>= 2.0.0'
 
+gem 'carrierwave'
+
 gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
 
 gem 'capistrano'
