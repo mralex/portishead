@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.xml
   def show
-    @project = Project.find(params[:id])
+    @project = Project.find_by_slug(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +25,10 @@ class ProjectsController < ApplicationController
   # GET /projects/new.xml
   def new
     @project = Project.new
+    
+    3.times do
+      @project.images.build
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,7 +38,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-    @project = Project.find(params[:id])
+    @project = Project.find_by_slug(params[:id])
   end
 
   # POST /projects
@@ -56,7 +60,7 @@ class ProjectsController < ApplicationController
   # PUT /projects/1
   # PUT /projects/1.xml
   def update
-    @project = Project.find(params[:id])
+    @project = Project.find_by_slug(params[:id])
 
     respond_to do |format|
       if @project.update_attributes(params[:project])

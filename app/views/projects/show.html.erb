@@ -20,6 +20,11 @@
   <%= @project.category_id %>
 </p>
 
-
+<% for image in @project.images %>
+<p>
+	<img src="<%= image.image.url %>" /><br/>
+	<%= image.title %>
+</p>
+<% end %>
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
