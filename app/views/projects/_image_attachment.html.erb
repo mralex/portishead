@@ -1,4 +1,5 @@
-<p>foo
-<%= i.input :title %>
-<%= i.input :image, :as => :file %>
-</p>
+
+	<%= i.input :title %>
+	<%= i.input :image, :as => :file %>
+	<%= i.input :_destroy, :as => :hidden %>
+	<li class="remove"><%= link_to "remove", "#", :class => "remove_image" %></li>

@@ -1,7 +1,15 @@
 <%= semantic_form_for(@project, :html => {:multipart => true}) do |f| %>
-	<%= f.inputs :name, :description, :category, :worked_on %>
-	<%= f.inputs :for => :images do |i| %>
-		<%= render "image_attachment", :i => i%>
+	<%= f.inputs do %>
+		<%= f.input :name %>
+	  	<%= f.input :description %>
+		<%= f.input :category %>
+	  	<%= f.input :worked_on, :as => :select, :collection => (1995..2011) %>
 	<% end %>
+	
+	<%= link_to_add_image "add image", f %>
+	<% f.inputs :for => :images, :name => "Images", :id => "images_#{@project.id}" do |i| %>
+		<%= render "image_attachment", :i => i %>
+	<% end %>
+	
 	<%= f.buttons %>
 <% end %>
