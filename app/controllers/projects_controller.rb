@@ -76,7 +76,7 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.xml
   def destroy
-    @project = Project.find(params[:id])
+    @project = Project.find_by_slug(params[:id])
     @project.destroy
 
     respond_to do |format|
