@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/haihappen/acts_as_list.git
+  revision: 2ce7d68388d35f297cf0cd65d11343240fd88f58
+  specs:
+    acts_as_list (0.0.2)
+
+GIT
   remote: git://github.com/mislav/will_paginate.git
   revision: b1a5beeec9f56ecbe3594fcdca76d92b6767ce50
   branch: rails3
@@ -77,6 +83,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mini_magick (3.2)
+      subexec (~> 0.0.4)
     mocha (0.9.10)
       rake
     mysql (2.8.1)
@@ -122,6 +130,7 @@ GEM
       railties (~> 3.0)
       rspec (~> 2.4.0)
     sqlite3-ruby (1.3.2)
+    subexec (0.0.4)
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -137,6 +146,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_list!
   bluecloth (>= 2.0.0)
   capistrano
   carrierwave
@@ -144,6 +154,7 @@ DEPENDENCIES
   factory_girl_rails!
   formtastic
   jquery-rails
+  mini_magick
   mocha
   mysql
   rails (= 3.0.3)
