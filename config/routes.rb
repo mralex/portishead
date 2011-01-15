@@ -1,8 +1,9 @@
 Portishead::Application.routes.draw do
-  get "images/index"
-
-  get "images/show"
-
+  
+  match "/auth/:provider/callback" => "users#create"
+  match "/login" => "users#login"
+  match "/logout" => "users#logout"
+  
   get "images/sort"
 
   resources :projects do
@@ -12,7 +13,8 @@ Portishead::Application.routes.draw do
   end
 
   resources :categories
-
+  resources :users
+  
   root :to => "projects#index"
   
   # The priority is based upon order of creation:

@@ -1,3 +1,4 @@
+app.yml
 .DS_Store
 .bundle
 db/*.sqlite3

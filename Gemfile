@@ -22,7 +22,7 @@ group :production do
 end
 
 gem 'jquery-rails'
-gem 'devise'
+gem 'omniauth'
 gem 'formtastic'
 gem 'bluecloth', '>= 2.0.0'
 

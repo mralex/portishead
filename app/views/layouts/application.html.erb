@@ -7,6 +7,18 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+<div id="nav">
+	<% if current_user %>
+		<%= link_to "Sign out", logout_path %> |
+		<%= link_to "Edit User", edit_user_path(current_user) %>
+	<% else %>
+		<%= link_to "Sign in", login_path %>
+	<% end%>
+</div>
+
+<% flash.each do |name, msg| %>
+	<%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
 
 <%= yield %>
 
