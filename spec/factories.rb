@@ -7,6 +7,7 @@ Factory.define :image do |f|
   f.image 'image.jpg'
   f.hero false
   f.hidden false
+  f.position 1
   f.project { |p| p.association(:project) }
 end
 
@@ -14,6 +15,7 @@ Factory.define :project do |f|
   f.name 'Awesome Project'
   f.worked_on '2011-01-14'
   f.description 'This is an awesome project'
+  f.slug 'awesome-project'
   f.association :category
 end
 

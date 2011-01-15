@@ -3,16 +3,19 @@ require 'spec_helper'
 describe ImagesController do
   describe "POST 'sort'" do
     it "should be successful" do
-      project = Factory(:project)
-      project.stubs(:is_valid).returns(true)
-      image1 = Image.create!(:title => "Foo", :position => 1)
-      image2 = Image.create!(:title => "Foo", :position => 2)
-      image1.project = project
-      image2.project = project
+      Image.delete_all
+      Project.delete_all
       
-      post 'sort', :image => [image2.id, image1.id], :project_id => project.slug
+      Project.any_instance.stubs(:valid?).returns(true)
+      project = Factory(:project)
+            
+      Image.any_instance.stubs(:valid?).returns(true)
+      image1 = project.images.create! {|i| i.hidden = false }
+      image2 = project.images.create! {|i| i.hidden = false }
+      
+      post :sort, { :image => [image2.id.to_s, image1.id.to_s], :project_id => project.to_param }
       response.should be_success
-      image1.position.should == 2
+      project.images.last.position.should == 1
     end
   end
 
