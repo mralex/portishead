@@ -1,5 +1,15 @@
 Portishead::Application.routes.draw do
-  resources :projects
+  get "images/index"
+
+  get "images/show"
+
+  get "images/sort"
+
+  resources :projects do
+    resources :images do 
+      post 'sort', :on => :collection
+    end
+  end
 
   resources :categories
 
