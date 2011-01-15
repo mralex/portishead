@@ -17,15 +17,40 @@
 
 <p>
   <b>Category:</b>
-  <%= @project.category_id %>
+  <%= @project.category.name %>
 </p>
 
 <h4>Images (<%= @project.images.count %>)</h4>
-<% @project.images.each do |image| %>
-<p>
-	<img src="<%= image.image.url %>" /><br/>
+<ul id="images_admin">
+<% @images.each do |image| %>
+<li id="image_<%= image.id %>">
+	<span class="handle">[drag]</span><br/>
+	<a href="<%= image.image.url%>"><img src="<%= image.image.small.url %>" /></a><br/>
 	<%= image.title %>
-</p>
+</li>
 <% end %>
+</ul>
+
+<script type="text/javascript" charset="utf-8">
+$(function(){
+	$('#images_admin').sortable({
+		dropOnEmpty: false,
+		items: 'li',
+		opacity: '0.5',
+		scroll: true,
+		update: function(e) {
+			$.ajax({
+				type: 'post',
+				data: $('#images_admin').sortable('serialize'),
+				datatype: 'script',
+				complete: function(request) {
+					$('#images_admin').effect('highlight');
+				},url: '<%= sort_project_images_path @project %>'
+			});
+		}
+	});
+});
+</script>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
