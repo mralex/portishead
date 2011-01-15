@@ -1,0 +1,45 @@
+body {
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+}
+
+a img {
+	border: none;
+	background-color: none;
+}
+
+#images {
+	list-style: none;
+	overflow-y: hidden;
+}
+
+#images li {
+	float: left;
+	margin-right: 20px;
+}
+
+.image_placeholder {
+	height: 200px;
+	width: 300px;
+	background: #f0f0f0;
+}
+
+li.image {
+	position: relative;
+}
+
+li.image p {
+	position: absolute;
+	bottom: 10px;
+	left: 5px;
+	width: 270px;
+	margin: 0;
+	padding:10px;
+	background: rgba(0, 0, 0, 0.75);
+	color: #fff;
+	font-size: 125%;
+	font-weight: bold;
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
