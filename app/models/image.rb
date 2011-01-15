@@ -3,6 +3,7 @@ class Image < ActiveRecord::Base
   acts_as_list :scope => :project
   mount_uploader :image, ImageUploader
   
+  scope :visible, where("hidden = ?", false)
   scope :hero, where("hero = ?", true)
   
   def image=(val)
