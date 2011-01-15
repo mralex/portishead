@@ -20,6 +20,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :hero do 
     process :resize_to_fill => [800, 300]
   end
+  
+  def filename
+    Time.now.to_i.to_s + File.extname(@filename) if @filename
+  end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
