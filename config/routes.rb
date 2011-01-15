@@ -1,5 +1,7 @@
 Portishead::Application.routes.draw do
   
+  resources :pages
+
   match "/auth/:provider/callback" => "users#create"
   match "/login" => "users#login"
   match "/logout" => "users#logout"
@@ -16,6 +18,8 @@ Portishead::Application.routes.draw do
   resources :users
   
   root :to => "projects#index"
+  
+  match '*id' => 'pages#show'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
