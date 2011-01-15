@@ -21,4 +21,11 @@ $("a.add_image").click(function(e) {
 	e.preventDefault();
 });
 
+
+$("#images li.image").hover(function() {
+	$(this).find("p").fadeOut('fast');
+}, function() {
+	$(this).find("p").fadeIn('fast');
+})
+
 });

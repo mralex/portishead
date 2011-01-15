@@ -21,30 +21,30 @@
 </p>
 
 <h4>Images (<%= @project.images.count %>)</h4>
-<ul id="images_admin">
+<ul id="images" class="admin">
 <% @images.each do |image| %>
-<li id="image_<%= image.id %>">
-	<span class="handle">[drag]</span><br/>
-	<a href="<%= image.image.url%>"><img src="<%= image.image.small.url %>" /></a><br/>
-	<%= image.title %>
+<li id="image_<%= image.id %>" class="image">
+	<a href="<%= image.image.url%>"><img src="<%= image.image.small.url %>" /></a>
+	<p><%= image.title %></p>
 </li>
 <% end %>
 </ul>
 
 <script type="text/javascript" charset="utf-8">
 $(function(){
-	$('#images_admin').sortable({
+	$('#images.admin').sortable({
 		dropOnEmpty: false,
 		items: 'li',
 		opacity: '0.5',
 		scroll: true,
+		placeholder: "image_placeholder",
 		update: function(e) {
 			$.ajax({
 				type: 'post',
-				data: $('#images_admin').sortable('serialize'),
+				data: $('#images.admin').sortable('serialize'),
 				datatype: 'script',
 				complete: function(request) {
-					$('#images_admin').effect('highlight');
+					$('#images.admin').effect('highlight');
 				},url: '<%= sort_project_images_path @project %>'
 			});
 		}
