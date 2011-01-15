@@ -1,5 +1,13 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should create from omniauth response" do
+    omniauth = {"provider" => "twitter", "uid" => "42", "user_info" => {"name" => "Foo Bar"}}
+    
+    user = User.create_with_omniauth(omniauth)
+    
+    user.provider.should == "twitter"
+    user.uid.should == "42"
+    user.name.should == "Foo Bar"
+  end
 end

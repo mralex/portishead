@@ -20,11 +20,11 @@
   <%= @project.category.name %>
 </p>
 
-<img src="<%= @hero.image.hero.url %>" />
+<img src="<%= @project.hero.hero.url %>" />
 
-<h4>Images (<%= @project.images.count %>)</h4>
+<h4>Images (<%= @project.visible_images.count %>)</h4>
 <ul id="images" class="<% if current_user %>admin<% end %>">
-<% @images.each do |image| %>
+<% @project.visible_images.each do |image| %>
 <li id="image_<%= image.id %>" class="image">
 	<a href="<%= image.image.url%>"><img src="<%= image.image.small.url %>" /></a>
 	<p><%= image.title %></p>
