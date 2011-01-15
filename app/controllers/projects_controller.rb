@@ -1,10 +1,19 @@
 class ProjectsController < ApplicationController
   before_filter :login_required, :except => [:index, :show]
   
+  def sort
+    Project.all.each do |p|
+      p.position = params['project'].index(p.id.to_s) + 1
+      p.save
+    end
+    
+    render :nothing => true
+  end
+  
   # GET /projects
   # GET /projects.xml
   def index
-    @projects = Project.all
+    @projects = Project.order(:position)
 
     respond_to do |format|
       format.html # index.html.erb

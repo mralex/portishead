@@ -6,12 +6,12 @@ Portishead::Application.routes.draw do
   match "/login" => "users#login"
   match "/logout" => "users#logout"
   
-  get "images/sort"
-
   resources :projects do
     resources :images do 
       post 'sort', :on => :collection
     end
+    
+    post 'sort', :on => :collection 
   end
 
   resources :categories

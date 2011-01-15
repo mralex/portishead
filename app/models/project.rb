@@ -11,6 +11,8 @@ class Project < ActiveRecord::Base
   
   accepts_nested_attributes_for :images, :reject_if => proc {|a| a['title'].blank? }, :allow_destroy => :true
   
+  acts_as_list
+  
   def visible_images
     images.visible
   end

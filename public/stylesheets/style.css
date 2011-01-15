@@ -7,14 +7,17 @@ a img {
 	background-color: none;
 }
 
-#images {
+#images, #projects {
 	list-style: none;
 	overflow-y: hidden;
 }
 
-#images li {
+#images li, #projects li {
 	float: left;
 	margin-right: 20px;
+}
+#projects li {
+	width: 200px;
 }
 
 .image_placeholder {
