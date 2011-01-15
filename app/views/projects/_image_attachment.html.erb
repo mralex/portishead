@@ -1,5 +1,6 @@
 
 	<%= i.input :title %>
 	<%= i.input :image, :as => :file %>
+	<%= i.input :hero, :input_html => {:class => "hero_check"} %>
 	<%= i.input :_destroy, :as => :hidden %>
 	<li class="remove"><%= link_to "remove", "#", :class => "remove_image" %></li>

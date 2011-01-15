@@ -21,6 +21,10 @@ $("a.add_image").click(function(e) {
 	e.preventDefault();
 });
 
+$(".hero_check").live("click", function(e) {
+	$(".hero_check").attr("checked", false);
+	$(this).attr("checked", true);
+});
 
 $("#images li.image").hover(function() {
 	$(this).find("p").fadeOut('fast');

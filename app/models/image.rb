@@ -3,7 +3,7 @@ class Image < ActiveRecord::Base
   acts_as_list :scope => :project
   mount_uploader :image, ImageUploader
   
-  #validates_presence_of :title
+  scope :hero, where("hero = ?", true)
   
   def image=(val)
     if !val.is_a?(String) && valid?

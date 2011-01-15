@@ -20,6 +20,8 @@
   <%= @project.category.name %>
 </p>
 
+<img src="<%= @hero.image.url %>" />
+
 <h4>Images (<%= @project.images.count %>)</h4>
 <ul id="images" class="admin">
 <% @images.each do |image| %>

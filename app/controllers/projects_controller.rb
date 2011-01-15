@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find_by_slug(params[:id])
     @images = @project.images.order("position")
+    @hero = @project.images.hero.first
     
     respond_to do |format|
       format.html # show.html.erb
