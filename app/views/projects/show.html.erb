@@ -20,7 +20,7 @@
   <%= @project.category.name %>
 </p>
 
-<img src="<%= @project.hero.hero.url %>" />
+<img src="<%= @project.hero.image.hero.url %>" />
 
 <h4>Images (<%= @project.visible_images.count %>)</h4>
 <ul id="images" class="<% if current_user %>admin<% end %>">

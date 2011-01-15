@@ -2,7 +2,11 @@ require "spec_helper"
 
 describe PagesController do
   describe "routing" do
-
+    
+    it "routes the toplevel url to a page" do
+      { :get => "/test-page" }.should route_to(:controller => "pages", :action => "show", :id => "test-page")
+    end
+    
     it "recognizes and generates #index" do
       { :get => "/pages" }.should route_to(:controller => "pages", :action => "index")
     end

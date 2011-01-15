@@ -7,7 +7,7 @@ class ImagesController < ApplicationController
 
   def sort
     @project = Project.find_by_slug(params['project_id'])
-    @project.images.each do |image|
+    @project.visible_images.each do |image|
       image.position = params['image'].index(image.id.to_s) + 1
       image.save
     end

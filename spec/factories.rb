@@ -22,3 +22,10 @@ Factory.define :page do |f|
   f.slug 'page-title'
   f.content 'This is a page'
 end
+
+Factory.define :user do |f|
+  f.provider 'twitter'
+  f.uid '42'
+  f.name 'Foo Bar'
+  f.email 'user@example.com'
+end
