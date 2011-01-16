@@ -129,15 +129,31 @@ li.image p {
 }
 
 #project_info_overlay {
+	overflow: hidden;
 	position: relative;
 	margin-bottom: 20px;
+	height: 300px;
 }
 
 #project_info_overlay_description {
+	width: 25%;
 	position: absolute;
-	top: 0;
+	top: -5px;
 	left: 0;
 	background: rgba(0, 0, 0, 0.85);
-	padding: 10px;
-	height: 280px;
+	padding: 10px 15px;
+	height: 290px;
+	-webkit-box-shadow: 1px 0 4px rgba(0, 0, 0, 0.7);
+}
+
+#worked {
+	position: absolute;
+	left: 15px;
+	bottom: 10px;
+}
+
+#category {
+	position: absolute;
+	right: 15px;
+	bottom: 10px;
 }

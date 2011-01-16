@@ -17,12 +17,12 @@
 		<div id="description">
 		  <%= @project.description %>
 		</div>
-		<p>
-		  <%= @project.worked_on %>
-		</p>
-		<p>
+		<div id="worked">
+		  <%= @project.worked_on.strftime("%Y") %>
+		</div>
+		<div id="category">
 		  <%= @project.category.name %>
-		</p>
+		</div>
 	</div>
 </div>
 
