@@ -27,7 +27,8 @@
 		<div id="nav">
 				<%= link_to current_user.name, current_user %>:
 				<%= link_to "Sign out", logout_path %> |
-				<%= link_to "Edit User", edit_user_path(current_user) %>
+				<%= link_to "Edit User", edit_user_path(current_user) %> |
+				<%= link_to "Dashboard", dashboard_index_path %>
 			<%= yield(:nav) %>
 		</div>
 	<% end%>

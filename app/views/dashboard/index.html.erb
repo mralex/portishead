@@ -1,0 +1,46 @@
+<div class="grid_12">
+	<h1>Dashboard</h1>
+	
+	<div class="grid_3 dashboard_model alpha">
+		<h2>Projects (<%= @projects.length %>)</h2>
+		<ul>
+			<% @projects.each do |project| %>
+				<li>
+					<%= link_to project.name, project %> &mdash; <strong><%= project.category.name %></strong><br/>
+					<small><em><%= project.images.length %> images</em></small>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	
+	<div class="grid_3 dashboard_model">
+		<h2>Categories (<%= @categories.length %>)</h2>
+		<ul>
+			<% @categories.each do |category| %>
+				<li>
+					<%= category.name %><br/>
+					<small><em><%= category.projects.length %> projects</em></small>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	
+	<div class="grid_3 dashboard_model">
+		<h2>Pages (<%= @pages.length %>)</h2>
+		<ul>
+			<% @pages.each do |page| %>
+				<li>
+					<%= link_to page.title, page %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	
+	<div class="grid_12 alpha dashboard_model">
+		<h2>Images (<%= @images.length %>)</h2>
+		<% @images.each do |image| %>
+			<img src="<%= image.image.small.url %>" alt="<%= image.title %>" />&nbsp;&nbsp;
+		<% end %>
+	</div>
+	
+</div>

@@ -1,5 +1,7 @@
 Portishead::Application.routes.draw do
   
+  resources :dashboard
+
   resources :pages
 
   match "/auth/:provider/callback" => "users#create"
