@@ -80,10 +80,24 @@ a img {
 }
 
 #index_hero {
+	position: relative;
 	padding: 0 10px 10px;
 	padding-bottom: 15px;
 	border-bottom: 1px solid #333;
 	margin-bottom: 20px;
+}
+
+#index_hero ul, #index_hero li {
+	height: 300px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#index_hero li {
+	position: absolute;
+	left: 10px;
+	top: 0;
 }
 
 #images, #projects {

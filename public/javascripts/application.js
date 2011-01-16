@@ -1,4 +1,31 @@
 $(function() {
+	
+if ($("#index_hero li").length > 1) {
+	// Homepage
+	// 
+	// Hero carousel
+	function nextHero(hero) {
+		var delayTime = 5000;
+		var fadeTime = 600;
+	
+		$(hero).delay(delayTime).fadeOut(fadeTime);
+		if ($(hero).next().length == 0) {
+			$(hero).parent().find("li").first().delay(delayTime).fadeIn(fadeTime, function(e) {
+				nextHero(this);
+			});
+		} else {
+			$(hero).next().delay(delayTime).fadeIn(fadeTime, function(e) {
+				nextHero(this);
+			});
+		}
+	}
+
+	$("#index_hero li").hide();
+	$("#index_hero li").first().show(0, function(e) {
+		nextHero(this);
+	});
+}
+
 // Form manipulation code adapted from Railscasts #197 (http://railscasts.com/episodes/197)
 
 // Remove the image

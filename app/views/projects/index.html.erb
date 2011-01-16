@@ -5,9 +5,15 @@
 <% end %>
 
 <div id="index_hero" class="grid_12 alpha omega">
-	<a href="<%= project_path @projects.first %>">
-	<img src="<%= @projects.first.hero.image.hero.url %>" width="940" height="300" />
-	</a>
+	<ul>
+<% @projects.each do |project| %>
+		<li>
+			<a href="<%= project_path project %>">
+			<img src="<%= project.hero.image.hero.url %>" width="940" height="300" />
+			</a>
+		</li>
+<% end %>
+	</ul>
 </div>
 <div class="clear"></div>
 <div class="grid_12">
