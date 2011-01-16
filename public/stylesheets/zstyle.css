@@ -197,3 +197,32 @@ li.image p {
 	right: 15px;
 	bottom: 10px;
 }
+
+
+/* Admin */
+.dashboard_model {
+	background: rgba(0, 0, 0, 0.25);
+	padding: 5px 10px 10px;
+	margin-bottom: 20px;
+	
+	-webkit-border-radius: 5px;
+}
+
+.dashboard_model ul, .dashboard_model li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.dashboard_model li {
+	padding: 7px 5px;
+}
+
+.dashboard_model li:nth-child(odd) {
+	background: #161d28;
+}
+
+.dashboard_placeholder {
+	background: #000 !important;
+	height: 50px;
+}

@@ -1,36 +1,71 @@
 <div class="grid_12">
 	<h1>Dashboard</h1>
 	
-	<div class="grid_3 dashboard_model alpha">
+	<div class="grid_4 dashboard_model alpha">
 		<h2>Projects (<%= @projects.length %>)</h2>
-		<ul>
+		<%= link_to "+ Add", new_project_path %>
+		<ul id="projects">
 			<% @projects.each do |project| %>
-				<li>
+				<li id="project_<%= project.id %>">
 					<%= link_to project.name, project %> &mdash; <strong><%= project.category.name %></strong><br/>
-					<small><em><%= project.images.length %> images</em></small>
+					<small><em>
+						<%= project.images.length %> images
+						&nbsp;[ <%= link_to "edit", edit_project_path(project) %> ]
+					</em></small>
 				</li>
 			<% end %>
 		</ul>
 	</div>
 	
+	<script type="text/javascript" charset="utf-8">
+	$(function(){
+		$('#projects').sortable({
+			dropOnEmpty: false,
+			items: 'li',
+			opacity: '0.5',
+			scroll: true,
+			axis: 'y',
+			placeholder: "dashboard_placeholder",
+			update: function(e) {
+				$.ajax({
+					type: 'post',
+					data: $('#projects').sortable('serialize'),
+					datatype: 'script',
+					complete: function(request) {
+						$('#projects').effect('highlight');
+					},url: '<%= sort_projects_path %>'
+				});
+			}
+		});
+	});
+	</script>
+	
 	<div class="grid_3 dashboard_model">
 		<h2>Categories (<%= @categories.length %>)</h2>
+		<%= link_to "+ Add", new_category_path %>
 		<ul>
 			<% @categories.each do |category| %>
 				<li>
 					<%= category.name %><br/>
-					<small><em><%= category.projects.length %> projects</em></small>
+					<small><em>
+						<%= category.projects.length %> projects
+						&nbsp;[ <%= link_to "edit", edit_category_path(category) %> ]
+					</em></small>
 				</li>
 			<% end %>
 		</ul>
 	</div>
 	
-	<div class="grid_3 dashboard_model">
+	<div class="grid_4 dashboard_model">
 		<h2>Pages (<%= @pages.length %>)</h2>
+		<%= link_to "+ Add", new_page_path %>
 		<ul>
 			<% @pages.each do |page| %>
 				<li>
-					<%= link_to page.title, page %>
+					<%= link_to page.title, page %><br/>
+					<small><em>
+						[ <%= link_to "edit", edit_page_path(page) %> ]
+					</em></small>
 				</li>
 			<% end %>
 		</ul>
