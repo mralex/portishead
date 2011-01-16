@@ -13,4 +13,69 @@ form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 
 --------------------------------------------------------------------------------------------------*/
 
-form.formtastic li.remove { padding-left:25%; }
+form.formtastic {
+	background-color: #eee;
+	border: 1px solid #fff;
+	color: #333;
+	padding: 20px;
+	
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.75);
+}
+
+form.formtastic .images {
+	background: #ddd;
+	padding: 10px;
+	-webkit-border-radius: 9px;
+	-webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.25);
+	
+	margin-bottom: 20px;
+}
+
+form.formtastic .images legend {
+	font-size: 200%;
+	font-weight: bold;
+}
+
+form.formtastic .images a.add_image, 
+form.formtastic .images a.remove_image {
+	display: inline-block;
+	padding: 5px;
+	background: #475467;
+	float: right;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: 1px solid #262d37;
+	color: #fff;
+}
+
+form.formtastic .images a.add_image:hover,
+form.formtastic .images a.remove_image:hover {
+	text-decoration: none;
+	background: #666;
+	color: #fff;
+	border-color: #444;
+}
+
+form.formtastic .images a.remove_image {
+	float: none;
+	padding: 0 5px;
+}
+
+form.formtastic fieldset > ol > li fieldset ol,
+form.formtastic fieldset > ol > li.boolean label,
+form.formtastic fieldset.buttons,
+form.formtastic li.remove {
+	padding-left: 12%;
+	clear: both;
+}
+
+form.formtastic fieldset > ol > li label {
+	width: 12%;
+}
+
+form.formtastic fieldset > ol > li.text textarea {
+	width: 85%;
+}
