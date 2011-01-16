@@ -64,32 +64,33 @@ a img {
 
 #nav {
 	position: fixed;
-	top: 0;
+	bottom: 0;
 	right: 50px;
 	background: rgba(0, 0, 64, 0.95);
 	display: inline-block;
 	margin-right: 10px;
 	padding: 5px 10px;
 	
-	-webkit-border-bottom-left-radius: 5px;
-	-webkit-border-bottom-right-radius: 5px;
-	-moz-border-radius-bottomleft: 5px;
-	-moz-border-radius-bottomright: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
 	
-	-webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
-	-moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+	-webkit-box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.1);
+	-moz-box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.1);
 }
 
 #index_hero {
 	position: relative;
 	padding: 10px 10px 10px;
-	border: 1px solid #2a2a2a;
 	margin-bottom: 20px;
-	background-color: #252525;
+	background-color: rgba(36, 36, 36, 0.5);
 	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
-	-webkit-border-radius: 3px;
 	-moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
-	-moz-border-radius: 3px;
+}
+
+#index_hero .grid_12 {
+	position: relative;
 }
 
 #index_hero ul, #index_hero li {
@@ -102,7 +103,7 @@ a img {
 #index_hero li {
 	position: absolute;
 	left: 10px;
-	top: 10px;
+	top: 0px;
 	overflow: hidden;
 	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.85);
 	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.85);
@@ -111,10 +112,14 @@ a img {
 #index_hero li .details {
 	position: absolute;
 	left: -2px;
-	bottom: 0px;
-	width: 924px;
+	bottom: 110px;
 	padding: 12px;
-	background: rgba(0, 0, 0, 0.75);
+	padding-right: 25px;
+/*	background: rgba(0, 0, 0, 0.75);*/
+	background: #fff;
+	color: #000;
+	
+/*	-webkit-box-shadow: 2px 0 5px rgba(0, 0, 0, 0.25);*/
 }
 
 #index_hero .details h2, #index_hero .details p {
@@ -122,7 +127,7 @@ a img {
 }
 #index_hero .details h2 {
 	display: inline-block;
-	color: #fff;
+	color: #000;
 }
 
 #images, #projects {
@@ -137,8 +142,6 @@ a img {
 }
 #images img, #projects img {
 	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
-	border: 5px solid #666;
-	width: 290px;
 }
 
 .image_placeholder {

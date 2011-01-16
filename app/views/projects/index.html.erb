@@ -4,22 +4,28 @@
 	<% end %>
 <% end %>
 
-<div id="index_hero" class="grid_12 alpha omega">
-	<ul>
-<% @projects.each do |project| %>
-		<li>
-			<a href="<%= project_path project %>">
-				<img src="<%= project.hero.image.hero.url %>" width="940" height="300" />
-			</a>
-			<div class="details">
-				<h2><%= project.name %></h2>
-				<p><em><%= project.category.name %></em></p>
-			</div>
-		</li>
-<% end %>
-	</ul>
 </div>
-<div class="clear"></div>
+<div id="index_hero">
+	<div class="container_12">
+		<div class="grid_12 alpha omega">
+			<ul>
+		<% @projects.each do |project| %>
+				<li>
+					<a href="<%= project_path project %>">
+						<img src="<%= project.hero.image.hero.url %>" width="940" height="300" />
+					</a>
+					<div class="details">
+						<h2><%= project.name %></h2>
+						<p><em><%= project.category.name %></em></p>
+					</div>
+				</li>
+		<% end %>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="container_12">
 <div class="grid_12">
 
 <ul id="projects" class="<% if current_user %>admin<% end %>">
