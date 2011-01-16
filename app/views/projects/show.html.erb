@@ -9,9 +9,22 @@
 
 <div class="grid_12">
 	
-<h1><%= @project.name %></h1>
 
-<img src="<%= @project.hero.image.hero.url %>" />
+<div id="project_info_overlay">
+	<img src="<%= @project.hero.image.hero.url %>" />
+	<div id="project_info_overlay_description">
+		<h1><%= @project.name %></h1>
+		<div id="description">
+		  <%= @project.description %>
+		</div>
+		<p>
+		  <%= @project.worked_on %>
+		</p>
+		<p>
+		  <%= @project.category.name %>
+		</p>
+	</div>
+</div>
 
 <ul id="images" class="<% if current_user %>admin<% end %>">
 <% @images.each do |image| %>
@@ -44,16 +57,6 @@ $(function(){
 });
 </script>
 
-<div id="description">
-  <%= @project.description %>
-</div>
 
-<p>
-  <%= @project.worked_on %>
-</p>
-
-<p>
-  <%= @project.category.name %>
-</p>
 
 </div>
