@@ -39,12 +39,26 @@ if ($("#index_hero li").length > 1) {
 	});
 	
 	$("#index_hero .details").hide();
-	$("#index_hero").hover(function() {
+	
+	// FIXME: Figure out good mobile device solution
+	// $("#index_hero ul").bind("touchstart", function() {
+	// 	window.clearTimeout(heroTimeout);
+	// 	carouselPaused = true;
+	// 	$(currentHero).find(".details").show('slide');
+	// });
+	// 
+	// $("#index_hero ul").bind("touchend", function() {
+	// 	$(currentHero).find(".details").hide('slide');
+	// 	carouselPaused = false;
+	// 	nextHero(currentHero, 1000);
+	// });
+	
+	$("#index_hero ul").hover(function() {
 		window.clearTimeout(heroTimeout);
 		carouselPaused = true;
-		$(currentHero).find(".details").fadeIn('fast');
+		$(currentHero).find(".details").show('slide');
 	}, function() {
-		$(currentHero).find(".details").fadeOut('fast');
+		$(currentHero).find(".details").hide('slide');
 		carouselPaused = false;
 		nextHero(currentHero, 1000);
 	})
