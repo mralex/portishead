@@ -4,26 +4,50 @@ if ($("#index_hero li").length > 1) {
 	// Homepage
 	// 
 	// Hero carousel
-	function nextHero(hero) {
-		var delayTime = 5000;
-		var fadeTime = 600;
 	
-		$(hero).delay(delayTime).fadeOut(fadeTime);
-		if ($(hero).next().length == 0) {
-			$(hero).parent().find("li").first().delay(delayTime).fadeIn(fadeTime, function(e) {
-				nextHero(this);
-			});
-		} else {
-			$(hero).next().delay(delayTime).fadeIn(fadeTime, function(e) {
-				nextHero(this);
-			});
-		}
+	var carouselPaused = false;
+	var currentHero = null;
+	var heroTimeout = null;
+	
+	function nextHero(hero, delay) {
+		var stdDelayTime = 3000;
+		var fadeTime = 600;
+				
+		if (carouselPaused) return;
+		
+		//$(hero).delay(delayTime).fadeOut(fadeTime);
+		heroTimeout = window.setTimeout(function(e) {
+			$(hero).fadeOut(fadeTime);
+			if ($(hero).next().length == 0) {
+				$(hero).parent().find("li").first().fadeIn(fadeTime, function(e) {
+					currentHero = this;
+					nextHero(this);
+				});
+			} else {
+				$(hero).next().fadeIn(fadeTime, function(e) {
+					currentHero = this;
+					nextHero(this);
+				});
+			}
+		}, delay ? delay : stdDelayTime);
 	}
 
 	$("#index_hero li").hide();
 	$("#index_hero li").first().show(0, function(e) {
+		currentHero = this;
 		nextHero(this);
 	});
+	
+	$("#index_hero .details").hide();
+	$("#index_hero").hover(function() {
+		window.clearTimeout(heroTimeout);
+		carouselPaused = true;
+		$(currentHero).find(".details").fadeIn('fast');
+	}, function() {
+		$(currentHero).find(".details").fadeOut('fast');
+		carouselPaused = false;
+		nextHero(currentHero, 1000);
+	})
 }
 
 // Form manipulation code adapted from Railscasts #197 (http://railscasts.com/episodes/197)
