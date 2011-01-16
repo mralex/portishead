@@ -15,7 +15,7 @@
 	<div id="project_info_overlay_description">
 		<h1><%= @project.name %></h1>
 		<div id="description">
-		  <%= @project.description %>
+		  <%= @project.description.html_safe %>
 		</div>
 		<div id="worked">
 		  <%= @project.worked_on.strftime("%Y") %>
@@ -30,7 +30,7 @@
 <% @images.each do |image| %>
 <li id="image_<%= image.id %>" class="image">
 	<a href="<%= image.image.url%>"><img src="<%= image.image.small.url %>" /></a>
-	<p><%= image.title %></p>
+	<!-- <p><%= image.title %></p> -->
 </li>
 <% end %>
 </ul>
