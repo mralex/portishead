@@ -41,6 +41,7 @@ class ProjectsController < ApplicationController
     3.times do
       @project.images.build
     end
+    @project.images.first.hero = true
 
     respond_to do |format|
       format.html # new.html.erb
