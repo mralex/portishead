@@ -38,7 +38,12 @@ class UsersController < ApplicationController
     user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
     
     # System only supports 1 user, so first come, first served
-    if user == nil && User.count < 1
+    if user == nil
+      if User.count > 1
+        redirect_to root_url, :notice => "Permission denied"
+        return
+      end
+      
       user = User.create_with_omniauth(auth)
       session[:user_id] = user.id
       redirect_to edit_user_url(user), :notice => "Account created"
