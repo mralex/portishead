@@ -18,7 +18,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :hero do 
-    process :resize_to_fill => [800, 300]
+    process :resize_to_fill => [940, 300]
   end
   
   def filename
