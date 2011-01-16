@@ -1,5 +1,7 @@
 body {
 	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	background: #222;
+	color: #fff;
 }
 
 a img {
@@ -7,17 +9,43 @@ a img {
 	background-color: none;
 }
 
+.container_12 {
+}
+
+#header {
+	color: #fff;
+	background: #000;
+	margin-bottom: 20px;
+}
+
+#header a {
+	color: #fff;
+}
+
+#nav {
+	text-align: right;
+}
+
+#index_hero {
+	padding: 0 10px 10px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #333;
+	margin-bottom: 20px;
+}
+
 #images, #projects {
 	list-style: none;
-	overflow-y: hidden;
+	margin: 0;
+	padding: 0;
 }
 
 #images li, #projects li {
-	float: left;
-	margin-right: 20px;
 }
 #projects li {
-	width: 200px;
+}
+
+#images img, #projects img {
+	-webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
 }
 
 .image_placeholder {

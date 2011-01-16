@@ -1,13 +1,31 @@
-<h1>Listing projects</h1>
+<% if current_user %>
+	<% content_for :nav do %>
+		<br/><%= link_to 'New Project', new_project_path %>
+	<% end %>
+<% end %>
+
+<div id="index_hero" class="grid_12 alpha omega">
+	<a href="<%= project_path @projects.first %>">
+	<img src="<%= @projects.first.hero.image.hero.url %>" width="940" height="300" />
+	</a>
+</div>
+<div class="clear"></div>
+<div class="grid_12">
 
 <ul id="projects" class="<% if current_user %>admin<% end %>">
 <% @projects.each do |project| %>
-	<li id="project_<%= project.id %>">
-		<a href="<%= project_url(project) %>">
+<% if  @projects.index(project) % 3 == 0 %>
+	<li id="project_<%= project.id %>" class="grid_4 alpha">
+<% elsif @projects.index(project) % 2 == 0%>
+	<li id="project_<%= project.id %>" class="grid_4 omega">
+<% else %>
+	<li id="project_<%= project.id %>" class="grid_4">
+<% end %>
+		<a href="<%= project_path(project) %>">
 			<% if project.hero %>
 			<img src="<%= project.hero.image.small.url %>"/>
 			<% end %>
-			<h2><%= project.name %></h2>
+			<h3><%= project.name %></h3>
 		</a>
 		<% if current_user %>
 		    <%= link_to 'Edit', edit_project_path(project) %> |
@@ -44,6 +62,4 @@ $(function(){
 
 <br />
 
-<% if current_user %>
-<%= link_to 'New Project', new_project_path %>
-<% end %>
+</div>

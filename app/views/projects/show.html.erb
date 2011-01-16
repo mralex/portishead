@@ -1,28 +1,18 @@
-<p id="notice"><%= notice %></p>
+<% title @project.name %>
 
-<p>
-  <b>Name:</b>
-  <%= @project.name %>
-</p>
 
-<p>
-  <b>Description:</b>
-  <%= @project.description %>
-</p>
+<% if current_user %>
+	<% content_for :nav do %>
+		<br/><%= link_to 'Edit Project', edit_project_path(@project) %>
+	<% end %>
+<% end %>
 
-<p>
-  <b>Worked on:</b>
-  <%= @project.worked_on %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @project.category.name %>
-</p>
+<div class="grid_12">
+	
+<h1><%= @project.name %></h1>
 
 <img src="<%= @project.hero.image.hero.url %>" />
 
-<h4>Images (<%= @images.count %>)</h4>
 <ul id="images" class="<% if current_user %>admin<% end %>">
 <% @images.each do |image| %>
 <li id="image_<%= image.id %>" class="image">
@@ -54,7 +44,16 @@ $(function(){
 });
 </script>
 
-<% if current_user %>
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<% end %>
-<%= link_to 'Back', projects_path %>
+<div id="description">
+  <%= @project.description %>
+</div>
+
+<p>
+  <%= @project.worked_on %>
+</p>
+
+<p>
+  <%= @project.category.name %>
+</p>
+
+</div>
