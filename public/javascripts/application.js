@@ -10,8 +10,8 @@ if ($("#index_hero li").length > 1) {
 	var heroTimeout = null;
 	
 	function nextHero(hero, delay) {
-		var stdDelayTime = 3000;
-		var fadeTime = 600;
+		var stdDelayTime = 4000;
+		var fadeTime = 400;
 				
 		if (carouselPaused) return;
 		
