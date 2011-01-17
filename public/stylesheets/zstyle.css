@@ -7,6 +7,11 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+a, a:visited {
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+	color: #fff;
+}
+
 a img {
 	border: none;
 	background-color: none;
@@ -60,6 +65,22 @@ a img {
 	margin-right: -20px;
 	float: right;
 	text-align: right;
+}
+
+#pages a {
+	display: inline-block;
+	padding: 1px 8px;
+	margin-left: 10px;
+	background: rgba(0, 0, 0, 0.35);
+	-webkit-border-radius: 25px;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+#pages a:hover {
+	text-decoration: none;
+	background: rgba(47, 47, 59, 0.75);
+	-webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
+	
 }
 
 #nav {
@@ -116,7 +137,7 @@ a img {
 	padding: 12px;
 	padding-right: 25px;
 /*	background: rgba(0, 0, 0, 0.75);*/
-	background: #fff;
+	background: rgba(255, 255, 255, 0.95);
 	color: #000;
 	
 /*	-webkit-box-shadow: 2px 0 5px rgba(0, 0, 0, 0.25);*/

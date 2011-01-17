@@ -3,7 +3,7 @@
 
 <% if current_user %>
 	<% content_for :nav do %>
-		<br/><%= link_to 'Edit Project', edit_project_path(@project) %>
+		| <strong><%= link_to 'Edit Project', edit_project_path(@project) %></strong>
 	<% end %>
 <% end %>
 
