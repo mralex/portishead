@@ -175,7 +175,7 @@ a img {
 -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
 -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
 	
-/*	-webkit-border-radius: 3px;*/
+	-webkit-border-radius: 2px;
 }
 
 #projects .project:after {
