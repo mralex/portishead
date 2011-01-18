@@ -37,16 +37,22 @@
 <% else %>
 	<li id="project_<%= project.id %>" class="grid_4">
 <% end %>
-		<a href="<%= project_path(project) %>">
-			<% if project.hero %>
-			<img src="<%= project.hero.image.small.url %>"/>
+		<div class="project">
+			<div class="project_info">
+				<a href="<%= project_path(project) %>">
+					<% if project.hero %>
+					<img src="<%= project.hero.image.small.url %>"/>
+					<% end %>
+					<h3><%= project.name %></h3>
+				</a>
+				<p class="client"><em><%= project.client.name %></em></p>
+				<p class="category"><em><%= project.category.name %></em></p>
+			</div>
+			<% if current_user %>
+			    <%= link_to 'Edit', edit_project_path(project) %> |
+			    <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %>
 			<% end %>
-			<h3><%= project.name %></h3>
-		</a>
-		<% if current_user %>
-		    <%= link_to 'Edit', edit_project_path(project) %> |
-		    <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %>
-		<% end %>
+		</div>
 	</li>
 <% end %>
 </ul>
