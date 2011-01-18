@@ -7,8 +7,9 @@ class Project < ActiveRecord::Base
   has_many :images, :dependent => :destroy
   
   validates_presence_of :name
+  validates_presence_of :client
   validates_presence_of :description
-  validates_presence_of :category_id
+  validates_presence_of :category
   validates_presence_of :worked_on
   
   accepts_nested_attributes_for :images, :reject_if => proc {|a| a['title'].blank? }, :allow_destroy => :true
