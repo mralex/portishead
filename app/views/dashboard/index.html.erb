@@ -57,6 +57,37 @@
 	</div>
 	
 	<div class="grid_4 dashboard_model">
+		<h2>Clients (<%= @clients.length %>)</h2>
+		<%= link_to "+ Add", new_client_path %>
+		<ul>
+			<% @clients.each do |client| %>
+				<li>
+					<%= link_to client.name, client %><br/>
+					<small><em>
+						[ <%= link_to "edit", edit_client_path(client) %> ]
+					</em></small>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	
+	<div class="clear"></div>
+	
+	<div class="grid_4 dashboard_model alpha">
+		<h2>Links (<%= @links.length %>)</h2>
+		<ul>
+			<% @links.each do |link| %>
+				<li>
+					<%= link_to link.title, link.url %> <small><em>(<%= link.project.name %>)</em></small><br/>
+					<small><em>
+						[ <%= link_to "edit", edit_link_path(link) %> ]
+					</em></small>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	
+	<div class="grid_4 dashboard_model">
 		<h2>Pages (<%= @pages.length %>)</h2>
 		<%= link_to "+ Add", new_page_path %>
 		<ul>

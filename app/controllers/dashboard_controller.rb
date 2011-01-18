@@ -6,6 +6,8 @@ class DashboardController < ApplicationController
     @categories = Category.all
     @pages = Page.all
     @images = Image.all
+    @links = Link.order(:position)
+    @clients = Client.all
   end
 
 end
