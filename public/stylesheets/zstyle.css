@@ -85,6 +85,7 @@ a img {
 
 #nav {
 	position: fixed;
+	z-index: 9999;
 	bottom: 0;
 	right: 50px;
 	background: rgba(0, 0, 64, 0.95);
