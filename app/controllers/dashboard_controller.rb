@@ -5,7 +5,7 @@ class DashboardController < ApplicationController
     @projects = Project.order(:position)
     @categories = Category.all
     @pages = Page.all
-    @images = Image.all
+    @images = Image.order(:project_id)
     @links = Link.order(:position)
     @clients = Client.all
   end

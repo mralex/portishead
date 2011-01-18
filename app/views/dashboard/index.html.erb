@@ -105,7 +105,7 @@
 	<div class="grid_12 alpha dashboard_model">
 		<h2>Images (<%= @images.length %>)</h2>
 		<% @images.each do |image| %>
-			<img src="<%= image.image.small.url %>" alt="<%= image.title %>" />&nbsp;&nbsp;
+			<a href="<%= project_path(image.project) %>"><img src="<%= image.image.small.url %>" alt="<%= image.title %>" /></a>&nbsp;&nbsp;
 		<% end %>
 	</div>
 	
