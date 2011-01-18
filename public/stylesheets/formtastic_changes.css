@@ -25,7 +25,9 @@ form.formtastic {
 	-moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.75);
 }
 
-form.formtastic .images {
+form.formtastic #images_form, 
+form.formtastic #client_form,
+form.formtastic #category_form {
 	background: #ddd;
 	padding: 10px;
 	-webkit-border-radius: 9px;
@@ -34,13 +36,13 @@ form.formtastic .images {
 	margin-bottom: 20px;
 }
 
-form.formtastic .images legend {
+form.formtastic #images_form legend {
 	font-size: 200%;
 	font-weight: bold;
 }
 
-form.formtastic .images a.add_image, 
-form.formtastic .images a.remove_image {
+form.formtastic #images_form a.add_image, 
+form.formtastic #images_form a.remove_image {
 	display: inline-block;
 	padding: 5px;
 	background: #475467;
@@ -51,15 +53,15 @@ form.formtastic .images a.remove_image {
 	color: #fff;
 }
 
-form.formtastic .images a.add_image:hover,
-form.formtastic .images a.remove_image:hover {
+form.formtastic #images_form a.add_image:hover,
+form.formtastic #images_form a.remove_image:hover {
 	text-decoration: none;
 	background: #666;
 	color: #fff;
 	border-color: #444;
 }
 
-form.formtastic .images a.remove_image {
+form.formtastic #images_form a.remove_image {
 	float: none;
 	padding: 0 5px;
 }

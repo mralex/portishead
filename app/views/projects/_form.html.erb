@@ -1,20 +1,23 @@
 <%= semantic_form_for(@project, :html => {:multipart => true}) do |f| %>
 	<%= f.inputs do %>
 		<%= f.input :name %>
-		<%= f.input :client %> or new client:
-			<%= f.inputs :for => :client do |c| %>
+		<%= f.input :client %>
+			<%= f.inputs :for => :client, :id => "client_form" do |c| %>
+				<h3>New Client</h3>
 				<%= c.input :name %>
+				<%= c.input :url %>
 			<% end %>
 		
 	  	<%= f.input :description %>
-		<%= f.input :category %> or new category: 
-			<%= f.inputs :for => :category do |c| %>
+		<%= f.input :category %>
+			<%= f.inputs :for => :category, :id => "category_form" do |c| %>
+				<h3>New Category</h3>
 				<%= c.input :name %>
 			<% end %>
 	  	<%= f.input :worked_on %>
 	<% end %>
 	
-	<div class="images">
+	<div id="images_form">
 		<%= link_to_add_image "add image", f %>
 		<% f.inputs :for => :images, :name => "Images", :id => "images_#{@project.id}" do |i| %>
 			<%= render "image_attachment", :i => i %>
