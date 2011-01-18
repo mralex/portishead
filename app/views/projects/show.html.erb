@@ -7,28 +7,37 @@
 	<% end %>
 <% end %>
 
-<div class="grid_4">
-	<div id="project_info">
-		<h1><%= @project.name %></h1>
-		<div id="description">
-		  <%= @project.description.html_safe %>
-		</div>
-		<div id="links">
-			<ul>
-				<% @project.links.each do |link| %>
-					<li><%= link_to link.title, link.url %></li>
-				<% end%>
-			</ul>
-		</div>
-		<div id="worked">
-		  <%= @project.worked_on.strftime("%Y") %>
-		</div>
-		<div id="category">
-		  <%= @project.category.name %>
-		</div>
+<div class="grid_12">
+	<h1><%= @project.name %></h1>
+</div>
+<div class="grid_9" id="project_info">
+	<div id="description">
+	  <%= @project.description.html_safe %>
+	</div>
+	<div id="worked">
+	  <em><%= @project.client.name %></em><br/>
+	  <%= @project.worked_on.strftime("%Y") %>
 	</div>
 </div>
-<div class="grid_8" id="project_images">
+<div class="grid_3">
+	<div id="links">
+		<ul>
+			<% @project.links.each do |link| %>
+				<li><%= link_to link.title, link.url %></li>
+			<% end%>
+		</ul>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="grid_3">
+	<% @images.each do |image| %>
+		<img width="70" src="<%= image.image.thumb.url %>"/>
+	<% end %>
+	<% @images.each do |image| %>
+		<img width="70" src="<%= image.image.thumb.url %>"/>
+	<% end %>
+</div>
+<div class="grid_9" id="">
 	<ul id="images" class="<% if current_user %>admin<% end %>">
 	<% @images.each do |image| %>
 		<li id="image_<%= image.id %>"><img width="100%" src="<%= image.image.url %>"/></li>

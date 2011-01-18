@@ -157,7 +157,9 @@ a img {
 	padding: 0;
 }
 
-#images li, #projects li {
+#images li {
+	margin: 0;
+	padding: 0;
 }
 #projects li {
 }
@@ -262,10 +264,13 @@ li.image p {
 }
 
 #project_info {
-	position: fixed;
+/*	position: fixed;
 	top: 90px;
 	width: 300px;
-	padding-bottom: 25px;
+*/
+	position: relative;
+	padding-bottom: 50px;
+	margin-bottom: 25px;
 }
 
 #project_images {
