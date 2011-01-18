@@ -1,3 +1,5 @@
+<%= javascript "home" %>
+
 <% if current_user %>
 	<% content_for :nav do %>
 		| <strong><%= link_to 'New Project', new_project_path %></strong>
