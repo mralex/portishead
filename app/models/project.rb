@@ -2,6 +2,8 @@ class Project < ActiveRecord::Base
   before_save :parameterize_name
   
   belongs_to :category
+  belongs_to :client
+  
   has_many :images, :dependent => :destroy
   
   validates_presence_of :name
@@ -10,6 +12,8 @@ class Project < ActiveRecord::Base
   validates_presence_of :worked_on
   
   accepts_nested_attributes_for :images, :reject_if => proc {|a| a['title'].blank? }, :allow_destroy => :true
+  accepts_nested_attributes_for :client, :reject_if => proc {|a| a['name'].blank? }
+  accepts_nested_attributes_for :category, :reject_if => proc {|a| a['name'].blank? }
   
   acts_as_list
   

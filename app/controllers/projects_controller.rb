@@ -38,6 +38,9 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     
+    @project.build_client
+    @project.build_category
+    
     3.times do
       @project.images.build
     end
@@ -52,6 +55,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1/edit
   def edit
     @project = Project.find_by_slug(params[:id])
+    @project.build_client
+    @project.build_category
   end
 
   # POST /projects

@@ -1,5 +1,7 @@
 Portishead::Application.routes.draw do
   
+  resources :clients
+
   resources :dashboard
 
   resources :pages

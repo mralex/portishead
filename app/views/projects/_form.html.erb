@@ -1,8 +1,16 @@
 <%= semantic_form_for(@project, :html => {:multipart => true}) do |f| %>
 	<%= f.inputs do %>
 		<%= f.input :name %>
+		<%= f.input :client %> or new client:
+			<%= f.inputs :for => :client do |c| %>
+				<%= c.input :name %>
+			<% end %>
+		
 	  	<%= f.input :description %>
-		<%= f.input :category %>
+		<%= f.input :category %> or new category: 
+			<%= f.inputs :for => :category do |c| %>
+				<%= c.input :name %>
+			<% end %>
 	  	<%= f.input :worked_on %>
 	<% end %>
 	
