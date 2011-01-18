@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110117203635) do
+ActiveRecord::Schema.define(:version => 20110118025528) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20110117203635) do
   create_table "clients", :force => true do |t|
     t.string   "name"
     t.string   "slug"
-    t.text   "description"
+    t.string   "description"
     t.string   "url"
     t.date     "started_at"
     t.date     "ended_at"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(:version => 20110117203635) do
     t.integer  "position"
     t.boolean  "hero"
     t.boolean  "hidden"
+  end
+
+  create_table "links", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "pages", :force => true do |t|

@@ -41,6 +41,8 @@ class ProjectsController < ApplicationController
     @project.build_client
     @project.build_category
     
+    @project.links.build
+    
     3.times do
       @project.images.build
     end
@@ -57,6 +59,10 @@ class ProjectsController < ApplicationController
     @project = Project.find_by_slug(params[:id])
     @project.build_client
     @project.build_category
+    
+    @project.links.build if @project.links.count == 0
+    @project.images.build if @project.images.count == 0
+    
   end
 
   # POST /projects

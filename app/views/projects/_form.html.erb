@@ -19,8 +19,15 @@
 	
 	<div id="images_form">
 		<%= link_to_add_image "add image", f %>
-		<% f.inputs :for => :images, :name => "Images", :id => "images_#{@project.id}" do |i| %>
+		<%= f.inputs :for => :images, :name => "Images", :id => "images_#{@project.id}" do |i| %>
 			<%= render "image_attachment", :i => i %>
+		<% end %>
+	</div>
+	
+	<div id="links_form">
+		<%= link_to_add_link "add link", f %>
+		<%= f.inputs :for => :links, :name => "Links", :id => "links_#{@project.id}" do |i| %>
+			<%= render "link_attachment", :i => i %>
 		<% end %>
 	</div>
 	

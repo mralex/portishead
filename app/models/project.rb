@@ -4,7 +4,8 @@ class Project < ActiveRecord::Base
   belongs_to :category
   belongs_to :client
   
-  has_many :images, :dependent => :destroy
+  has_many :images
+  has_many :links
   
   validates_presence_of :name
   validates_presence_of :client
@@ -13,6 +14,7 @@ class Project < ActiveRecord::Base
   validates_presence_of :worked_on
   
   accepts_nested_attributes_for :images, :reject_if => proc {|a| a['title'].blank? }, :allow_destroy => :true
+  accepts_nested_attributes_for :links, :reject_if => proc {|a| a['title'].blank? }, :allow_destroy => :true
   accepts_nested_attributes_for :client, :reject_if => proc {|a| a['name'].blank? }
   accepts_nested_attributes_for :category, :reject_if => proc {|a| a['name'].blank? }
   

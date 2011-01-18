@@ -13,6 +13,13 @@
 		<div id="description">
 		  <%= @project.description.html_safe %>
 		</div>
+		<div id="links">
+			<ul>
+				<% @project.links.each do |link| %>
+					<li><%= link_to link.title, link.url %></li>
+				<% end%>
+			</ul>
+		</div>
 		<div id="worked">
 		  <%= @project.worked_on.strftime("%Y") %>
 		</div>

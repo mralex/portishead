@@ -25,7 +25,8 @@ form.formtastic {
 	-moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.75);
 }
 
-form.formtastic #images_form, 
+form.formtastic #images_form,
+form.formtastic #links_form, 
 form.formtastic #client_form,
 form.formtastic #category_form {
 	background: #ddd;
@@ -36,13 +37,16 @@ form.formtastic #category_form {
 	margin-bottom: 20px;
 }
 
-form.formtastic #images_form legend {
+form.formtastic #images_form legend,
+form.formtastic #links_form legend {
 	font-size: 200%;
 	font-weight: bold;
 }
 
 form.formtastic #images_form a.add_image, 
-form.formtastic #images_form a.remove_image {
+form.formtastic #images_form a.remove_image,
+form.formtastic #links_form a.add_link, 
+form.formtastic #links_form a.remove_link {
 	display: inline-block;
 	padding: 5px;
 	background: #475467;
@@ -54,14 +58,17 @@ form.formtastic #images_form a.remove_image {
 }
 
 form.formtastic #images_form a.add_image:hover,
-form.formtastic #images_form a.remove_image:hover {
+form.formtastic #images_form a.remove_image:hover,
+form.formtastic #links_form a.add_link:hover,
+form.formtastic #links_form a.remove_link:hover {
 	text-decoration: none;
 	background: #666;
 	color: #fff;
 	border-color: #444;
 }
 
-form.formtastic #images_form a.remove_image {
+form.formtastic #images_form a.remove_image,
+form.formtastic #links_form a.remove_link {
 	float: none;
 	padding: 0 5px;
 }
