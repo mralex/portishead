@@ -164,10 +164,22 @@ a img {
 	padding: 0;
 }
 
+#images li {
+	float: left;
+	margin-bottom: 15px;
+	margin-right: 10px;
+}
+
+#image_view {
+	height: 600px;
+}
+
 #image_view li {
 	position: absolute;
 	top: 0;
 	left: 0;
+	margin-bottom: 100px;
+
 }
 
 #image_view li img {
@@ -250,9 +262,9 @@ bottom: 12px;
 } 
 
 .image_placeholder {
-	height: 262px;
-	width: 280px;
-	background: #f0f0f0;
+	height: 70px;
+	width: 70px;
+	background: rgba(0, 0, 0, 0.25);
 }
 
 li.image {

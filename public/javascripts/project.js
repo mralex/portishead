@@ -16,12 +16,12 @@ $("#images li a").live("click", function(e) {
 	
 	if ($("#image_view").has(".image_" + id).length == 0) {
 		$.getJSON(document.href + "/images/" + id, function(data) {
-			$("#image_view li").fadeOut('fast');
-			$("#image_view").append('<li class="image_'+ data.image.id +'"><img src="' + data.image.image.url +'" /></li>')
+			$("#image_view li").fadeOut('slow');
+			$("#image_view").append('<li class="image_'+ data.image.id +'"><img src="' + data.image.image.url +'" /></li>').fadeIn('slow');
 		});
 	} else {
-		$("#image_view li").fadeOut();
-		$("#image_view li.image_" + id).fadeIn();
+		$("#image_view li").fadeOut('fast');
+		$("#image_view li.image_" + id).fadeIn('fast');
 	}
 	
 	currentId = id;

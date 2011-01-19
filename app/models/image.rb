@@ -17,10 +17,6 @@ class Image < ActiveRecord::Base
     end
   end
   
-  def hero
-    image.hero
-  end
-  
   def thumb
     image.thumb
   end
