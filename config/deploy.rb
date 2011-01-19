@@ -20,9 +20,18 @@ role :db,  application, :primary => true # This is where Rails migrations will r
 
 
 namespace :deploy do
-  task :start do ; end
+  task :start, :roles => :app do ;end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+  
+  after "deploy:update_code", :link_uploads
+end
+
+desc "Update uploads symlink"
+task :link_uploads do
+  run "ln -s #{deploy_to}/#{shared_dir}/config/database.yml #{current_release}/config/database.yml"
+  run "rm -rf #{current_release}/public/uploads"
+  run "ln -s #{deploy_to}/#{shared_dir}/uploads #{current_release}/public"
 end
