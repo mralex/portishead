@@ -32,6 +32,7 @@ end
 desc "Update uploads symlink"
 task :link_uploads do
   run "ln -s #{deploy_to}/#{shared_dir}/config/database.yml #{current_release}/config/database.yml"
+  run "ln -s #{deploy_to}/#{shared_dir}/config/app.yml #{current_release}/config/app.yml"
   run "rm -rf #{current_release}/public/uploads"
   run "ln -s #{deploy_to}/#{shared_dir}/uploads #{current_release}/public"
 end
