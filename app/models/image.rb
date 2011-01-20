@@ -8,7 +8,7 @@ class Image < ActiveRecord::Base
   scope :visible, where("hidden = ?", false)
   scope :hero, where("hero = ?", true)
   
-  attr_accessible :title, :image, :hero, :thumb
+  attr_accessible :title, :image, :hero, :thumb, :hidden
   
   def image=(val)
     if !val.is_a?(String) && valid?
