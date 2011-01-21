@@ -1,0 +1,13 @@
+	<ul>
+<% @projects.each do |project| %>
+		<li>
+			<a href="<%= project_path project %>">
+				<img src="<%= project.hero.image.hero.url %>" width="940" height="300" />
+			</a>
+			<div class="details">
+				<h2><%= project.name %></h2>
+				<p><em><%= project.category.name %></em></p>
+			</div>
+		</li>
+<% end %>
+	</ul>

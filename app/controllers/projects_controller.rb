@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_filter :login_required, :except => [:index, :show]
+  before_filter :login_required, :except => [:index, :show, :heroes]
   
   def sort
     Project.all.each do |p|
@@ -8,6 +8,11 @@ class ProjectsController < ApplicationController
     end
     
     render :nothing => true
+  end
+  
+  def heroes
+    @projects = Project.order(:position)
+    #render :js => @projects
   end
   
   # GET /projects

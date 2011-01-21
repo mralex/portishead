@@ -17,6 +17,7 @@ Portishead::Application.routes.draw do
       post 'sort', :on => :collection
     end
     
+    get 'heroes', :on => :collection
     post 'sort', :on => :collection 
   end
 
