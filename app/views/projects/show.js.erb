@@ -4,7 +4,8 @@ $(function() {
 var currentId;
 
 var id = currentId = $("#images li").first().attr("data-id");
-$.getJSON(document.href + "/images/" + id, function(data) {
+var href = document.location.href.replace(/^.*#/, '');
+$.getJSON(href + "/images/" + id, function(data) {
 	$("#image_view").append('<li class="image_'+ data.image.id +'"><img src="' + data.image.image.url +'" /></li>')
 });
 
@@ -17,7 +18,7 @@ $("#images li a").live("click", function(e) {
 	}
 	
 	if ($("#image_view").has(".image_" + id).length == 0) {
-		$.getJSON(document.href + "/images/" + id, function(data) {
+		$.getJSON(href + "/images/" + id, function(data) {
 			$("#image_view li").fadeOut('slow');
 			$("#image_view").append('<li class="image_'+ data.image.id +'"><img src="' + data.image.image.url +'" /></li>').fadeIn('slow');
 		});
