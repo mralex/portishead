@@ -1,6 +1,9 @@
 $(function() {
+	var loaded = false;
 	
 	$.history.init(function(url) {
+		if (url == '' && loaded) url = '/projects/heroes';
+		
 		if (url && (url.length > 1)) {
 			$('html, body').animate({scrollTop:0}, 400, 'swing');
 		
@@ -18,6 +21,7 @@ $(function() {
 			$.getScript("/projects/heroes.js", function(e) {
 				$("#index_hero").css("height", $("#content_box").height());
 			});
+			loaded = true;
 		}
 	},{ unescape: "/" });
 
