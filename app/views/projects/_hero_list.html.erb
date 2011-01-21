@@ -1,7 +1,8 @@
+<div class="grid_12 alpha omega">
 	<ul>
 <% @projects.each do |project| %>
 		<li>
-			<a href="<%= project_path project %>">
+			<a href="<%= project_path project %>" class="project_link">
 				<img src="<%= project.hero.image.hero.url %>" width="940" height="300" />
 			</a>
 			<div class="details">
@@ -11,3 +12,5 @@
 		</li>
 <% end %>
 	</ul>
+</div>
+<div class="clear"></div>
