@@ -8,11 +8,9 @@
 
 </div>
 <div id="index_hero">
-	<div class="container_12">
-		<div class="grid_12 alpha omega" id="content_box">
-		</div>
-		<div class="clear"></div>
+	<div class="container_12" id="content_box">
 	</div>
+	<div class="clear"></div>
 </div>
 <div class="container_12">
 <div class="grid_12">
@@ -47,7 +45,7 @@
 </ul>
 
 
-
+<% if current_user %>
 <script type="text/javascript" charset="utf-8">
 $(function(){
 	$('#projects.admin').sortable({
@@ -69,7 +67,7 @@ $(function(){
 	});
 });
 </script>
-
+<% end %>
 
 <br />
 
