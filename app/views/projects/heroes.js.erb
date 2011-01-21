@@ -1,8 +1,6 @@
 // Instantiate the hero banner carousel
 
-$("#content_box").hide();
 $("#content_box").html("<%= escape_javascript(render(:partial => "hero_list")) %>");
-$("#content_box").slideDown('fast');
 
 if ($("#content_box li").length > 1) {
 	// Homepage
