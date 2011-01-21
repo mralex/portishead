@@ -43,9 +43,10 @@ $(function() {
 		$("#index_hero ul").hover(function() {
 			window.clearTimeout(heroTimeout);
 			carouselPaused = true;
-			$(currentHero).find(".details").show('slide');
+			$(currentHero).find(".details").stop(true, true);
+			$(currentHero).find(".details").show('slide', {queue: false});
 		}, function() {
-			$(currentHero).find(".details").hide('slide');
+			$(currentHero).find(".details").hide('slide', {queue: false});
 			carouselPaused = false;
 			nextHero(currentHero, 1000);
 		});
