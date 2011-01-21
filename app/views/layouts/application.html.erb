@@ -3,7 +3,7 @@
 <head>
   <title><%= yield(:title) %> <%= APP_CONFIG["name"] %></title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag "jquery.min", "jquery-ui.min", "rails", :defaults %>
+  <%= javascript_include_tag "jquery.min", "jquery-ui.min", "jquery.history", "rails", :defaults %>
 
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
