@@ -2,11 +2,10 @@ $(function() {
 	
 	$.history.init(function(url) {
 		if (url) {
-			$('html, body').animate({scrollTop:0});
+			$('html, body').animate({scrollTop:0}, 'slow', 'swing');
 
 			$("#content_box").slideUp('fast');
-		//	$.getScript(url);
-			$.getScript("/projects/heroes.js");
+			$.getScript(url + '.js');
 			$("#content_box").slideDown('fast');
 		} else {
 			$.getScript("/projects/heroes.js");
@@ -17,7 +16,8 @@ $(function() {
 		var url = $(this).attr('href');
 		url = url.replace(/^.*#/, '');
 		$.history.load(url);
-		return false;
+		
+		e.preventDefault();
 	});
 
 });

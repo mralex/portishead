@@ -8,62 +8,6 @@
 	<% end %>
 <% end %>
 
-<div class="grid_12">
-	<h1><%= @project.name %></h1>
-</div>
-<div class="grid_9" id="project_info">
-	<div id="description">
-	  <%= @project.description.html_safe %>
-	</div>
-	<div id="worked">
-	  <em><%= @project.client.name %></em><br/>
-	  <%= @project.worked_on.strftime("%Y") %>
-	</div>
-</div>
-<div class="grid_3">
-	<div id="links">
-		<ul>
-			<% @project.links.each do |link| %>
-				<li><%= link_to link.title, link.url %></li>
-			<% end%>
-		</ul>
-	</div>
-</div>
-<div class="clear"></div>
-<div class="grid_3">
-	<ul id="images" class="<% if current_user %>admin<% end %>">
-	<% @images.each do |image| %>
-		<li id="image_<%= image.id %>" data-id="<%= image.id %>">
-			<a href="<%= image.image.url %>"><img width="200" src="<%= image.image.small.url %>"/></a>
-		</li>
-	<% end %>
-	</ul>
-</div>
-<div class="grid_9" id="">
-	<ul id="image_view">
-	</ul>
-</div>
-
-<script type="text/javascript" charset="utf-8">
-$(function(){
-	$('#images.admin').sortable({
-		dropOnEmpty: false,
-		items: 'li',
-		opacity: '0.5',
-		scroll: true,
-		placeholder: "image_placeholder",
-		update: function(e) {
-			$.ajax({
-				type: 'post',
-				data: $('#images.admin').sortable('serialize'),
-				datatype: 'script',
-				complete: function(request) {
-					$('#images.admin').effect('highlight');
-				},url: '<%= sort_project_images_path @project %>'
-			});
-		}
-	});
-});
-</script>
+<%= render :partial => 'project' %>
 
 foo
