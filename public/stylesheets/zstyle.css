@@ -162,6 +162,10 @@ a img {
 	color: #000;
 }
 
+#project {
+	position: relative;
+}
+
 #images, #image_view, #projects {
 	position: relative;
 	list-style: none;
@@ -196,6 +200,54 @@ a img {
 /*	border: 10px solid #fff;*/
 /*	-webkit-border-radius: 5px;*/
 /*	-webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);*/
+}
+
+#image_view_nav {
+	position: absolute;
+	top: 11px;
+	right: 0;
+}
+
+#image_view_nav a {
+	display: inline-block;
+	min-width: 50px;
+	text-align: center;
+	padding: 5px 10px;
+	border: 1px solid #0f0f0f;
+	background: -webkit-gradient(linear, left top, left bottom, from(#1f1f1f), to(#111111));
+	background: -moz-linear-gradient(top left, #1f1f1f, #111111);
+
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+#image_view_nav a:hover {
+	text-decoration: none;
+/*	-webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+	-moz-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+*/	
+	background: -webkit-gradient(linear, left top, left bottom, from(#252525), to(#141414));
+	background: -moz-linear-gradient(top left, #1f1f1f, #111111);
+}
+
+#image_view_nav a:active {
+	text-decoration: none;
+/*	-webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+	-moz-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+*/	
+	background: -webkit-gradient(linear, left bottom, left top, from(#252525), to(#141414));
+	background: -moz-linear-gradient(bottom left, #1f1f1f, #111111);
+}
+
+#image_view_nav .next {
+	float: right;
+}
+
+#image_view_nav .prev {
+	float: left;
 }
 
 #projects li {

@@ -1,4 +1,4 @@
-<div id="project" style="oveflow-y: auto;">
+<div id="project">
 	<div class="grid_12">
 		<h1><%= @project.name %></h1>
 	</div>
@@ -28,7 +28,12 @@
 		</ul>
 	</div>
 	<div class="clear"></div>
-	
+	<% if @images.length > 1 %>
+	<div class="grid_3" id="image_view_nav">
+		<a class="prev" href="#">Previous Image</a>
+		<a class="next" href="#">Next Image</a>
+	</div>
+	<% end %>
 </div>
 
 <% if current_user %>

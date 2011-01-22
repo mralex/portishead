@@ -43,7 +43,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
   
   def pad_and_sharpen(width, height)
-    background = "#000000"
+    background = "#1d1d1f"
     background = :transparent if (File.extname(@filename) == ".png")
 
     resize_and_pad(width, height, background)

@@ -1,5 +1,46 @@
 $("#content_box").html("<%= escape_javascript(render(:partial => "project")) %>");
 
+$("#image_view li").hide();
+$("#image_view li:first").show();
+$("#image_view li:first").addClass("visible");
+
+$("#image_view_nav a.next").live("click", function(e) {
+	var current = $("#image_view li.visible");
+	var next = current.next();
+	
+	$("#image_view li").removeClass("visible");
+	
+	if (next.length == 0) {
+		// loop back
+		next = $("#image_view li:first");
+	}
+	
+	next.addClass("visible");
+	$("#image_view li").fadeOut('fast');
+	next.fadeIn('fast');
+	
+	e.preventDefault();
+});
+
+$("#image_view_nav a.prev").live("click", function(e) {
+	var current = $("#image_view li.visible");
+	var previous = current.prev();
+	
+	$("#image_view li").removeClass("visible");
+	
+	if (previous.length == 0) {
+		// loop back
+		previous = $("#image_view li:last");
+	}
+	
+	previous.addClass("visible");
+	$("#image_view li").fadeOut('fast');
+	previous.fadeIn('fast');
+	
+	e.preventDefault();
+});
+
+
 //$(function() {
 // var currentId;
 // 
