@@ -2,7 +2,7 @@
 
 class ImageUploader < CarrierWave::Uploader::Base
 
-  include CarrierWave::MiniMagick
+  include CarrierWave::RMagick
 
   storage :file
   # storage :s3
@@ -17,16 +17,35 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [75, 75]
   end
   
+  version :display do
+    process :pad_and_sharpen => [700, 500]
+  end
+  
   version :small do
-    process :resize_to_fill => [300, 200]
+    process :pad_and_sharpen => [300, 200]
   end
 
   version :hero do 
-    process :resize_to_fill => [940, 300]
+    process :resize_and_crop => [940, 300]
   end
   
   def filename
     Time.now.to_i.to_s + File.extname(@filename) if @filename
+  end
+  
+  def resize_and_crop(width, height)
+    manipulate! do |img|
+      img.background_color = "none"
+      img.resize_to_fill!(width, height)
+      img = img.unsharp_mask(0, 0.6, 0.5, 0.1)
+    end
+  end
+  
+  def pad_and_sharpen(width, height)
+    resize_and_pad(width, height)
+    manipulate! do |img|
+      img = img.unsharp_mask(0, 0.6, 0.7, 0.1)
+    end
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
