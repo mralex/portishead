@@ -4,7 +4,9 @@ $("#image_view li").hide();
 $("#image_view li:first").show();
 $("#image_view li:first").addClass("visible");
 
-$("#image_view_nav a.next").live("click", function(e) {
+<% if @images.length > 1 %>
+
+$("#image_view_nav a.next").click(function(e) {
 	var current = $("#image_view li.visible");
 	var next = current.next();
 	
@@ -22,7 +24,7 @@ $("#image_view_nav a.next").live("click", function(e) {
 	e.preventDefault();
 });
 
-$("#image_view_nav a.prev").live("click", function(e) {
+$("#image_view_nav a.prev").click(function(e) {
 	var current = $("#image_view li.visible");
 	var previous = current.prev();
 	
@@ -40,6 +42,7 @@ $("#image_view_nav a.prev").live("click", function(e) {
 	e.preventDefault();
 });
 
+<% end %>
 
 //$(function() {
 // var currentId;
