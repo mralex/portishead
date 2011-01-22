@@ -36,3 +36,5 @@ task :link_uploads do
   run "rm -rf #{current_release}/public/uploads"
   run "ln -s #{deploy_to}/#{shared_dir}/uploads #{current_release}/public"
 end
+
+after "deploy", "deploy:cleanup" # keeps only last 5 releases
