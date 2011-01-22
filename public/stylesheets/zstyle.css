@@ -129,6 +129,7 @@ a img {
 	overflow: hidden;
 	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.85);
 	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.85);
+	background: rgba(255, 255, 255, 0.08);
 }
 
 #we_can_be_heroes li .details {
@@ -183,7 +184,9 @@ a img {
 }
 
 #image_view li img {
-	width: 100%;
+/*	border: 10px solid #fff;*/
+/*	-webkit-border-radius: 5px;*/
+/*	-webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);*/
 }
 
 #projects li {
@@ -238,6 +241,7 @@ bottom: 12px;
 #projects .project img {
 	width: 278px;
 	border: 1px solid #1d1d1d;
+	background: rgba(255, 255, 255, 0.15);
 }
 
 #projects .project .project_info {

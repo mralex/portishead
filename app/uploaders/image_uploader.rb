@@ -22,7 +22,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
   
   version :small do
-    process :pad_and_sharpen => [300, 200]
+    process :resize_and_crop => [300, 200]
   end
 
   version :hero do 
@@ -30,21 +30,26 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
   
   def filename
-    Time.now.to_i.to_s + File.extname(@filename) if @filename
+    #Time.now.to_i.to_s + File.extname(@filename) if @filename
+    Time.now.to_i.to_s + ".png" if @filename
   end
   
   def resize_and_crop(width, height)
     manipulate! do |img|
-      img.background_color = "none"
+      #img.background_color = "#ffffff"
       img.resize_to_fill!(width, height)
-      img = img.unsharp_mask(0, 0.5, 0.4, 0.1)
+      img = img.unsharp_mask(0, 0.6, 0.5, 0.05)
     end
   end
   
   def pad_and_sharpen(width, height)
-    resize_and_pad(width, height)
+    background = "#000000"
+    background = :transparent if (File.extname(@filename) == ".png")
+
+    resize_and_pad(width, height, background)
+    
     manipulate! do |img|
-      img = img.unsharp_mask(0, 0.5, 0.5, 0.1)
+      img = img.unsharp_mask(0, 0.6, 0.5, 0.05)
     end
   end
 
