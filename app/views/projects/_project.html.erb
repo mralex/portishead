@@ -10,7 +10,7 @@
 		  <em><%= @project.client.name %></em><br/>
 		  <%= @project.worked_on.strftime("%Y") %>
 		</div>
-		<div id="links">
+		<div class="links">
 			<ul>
 				<% @project.links.each do |link| %>
 					<li><%= link_to link.title, link.url %></li>
