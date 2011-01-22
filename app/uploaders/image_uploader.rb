@@ -37,14 +37,14 @@ class ImageUploader < CarrierWave::Uploader::Base
     manipulate! do |img|
       img.background_color = "none"
       img.resize_to_fill!(width, height)
-      img = img.unsharp_mask(0, 0.6, 0.5, 0.1)
+      img = img.unsharp_mask(0, 0.5, 0.4, 0.1)
     end
   end
   
   def pad_and_sharpen(width, height)
     resize_and_pad(width, height)
     manipulate! do |img|
-      img = img.unsharp_mask(0, 0.6, 0.7, 0.1)
+      img = img.unsharp_mask(0, 0.5, 0.5, 0.1)
     end
   end
 

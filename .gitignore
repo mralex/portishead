@@ -1,3 +1,4 @@
+config/database.yml
 app.yml
 .DS_Store
 .bundle
