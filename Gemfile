@@ -27,13 +27,12 @@ gem 'formtastic'
 gem 'bluecloth', '>= 2.0.0'
 
 gem 'carrierwave'
-gem 'mini_magick'
+gem 'rmagick'
+#gem 'mini_magick'
 
 gem 'acts_as_list', :git => 'git://github.com/haihappen/acts_as_list.git'
 
 gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
-
-gem 'capistrano'
 
 # Use unicorn as the web server
 # gem 'unicorn'
