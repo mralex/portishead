@@ -117,6 +117,13 @@ a img {
 	position: relative;
 }
 
+#index_hero #loader {
+	position: absolute;
+	left: 550px;
+	top: 40%;
+	display: none;
+}
+
 #we_can_be_heroes ul, #we_can_be_heroes li {
 	height: 300px;
 	list-style: none;
@@ -362,7 +369,7 @@ li.image p {
 
 #project .links a {
 	display: block;
-	margin-left: 0;
+	margin-left: -8px;
 	margin-bottom: 10px;
 	font-weight: bold;
 }

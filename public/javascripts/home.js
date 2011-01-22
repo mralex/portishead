@@ -1,6 +1,13 @@
 $(function() {
 	var loaded = false;
 	
+	$("#index_hero").ajaxStart(function() {
+		$("#loader").fadeIn('fast');
+	})
+	$("#index_hero").ajaxComplete(function() {
+		$("#loader").fadeOut('fast');
+	})
+	
 	$.history.init(function(url) {
 		if (url == '' && loaded) url = '/projects/heroes';
 		
