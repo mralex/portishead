@@ -115,14 +115,14 @@ a img {
 	position: relative;
 }
 
-#index_hero ul, #index_hero li {
+#we_can_be_heroes ul, #we_can_be_heroes li {
 	height: 300px;
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-#index_hero li {
+#we_can_be_heroes li {
 	position: absolute;
 	left: 10px;
 	top: 0px;
@@ -131,7 +131,7 @@ a img {
 	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.85);
 }
 
-#index_hero li .details {
+#we_can_be_heroes li .details {
 	position: absolute;
 	left: -2px;
 	bottom: 110px;
@@ -144,10 +144,10 @@ a img {
 /*	-webkit-box-shadow: 2px 0 5px rgba(0, 0, 0, 0.25);*/
 }
 
-#index_hero .details h2, #index_hero .details p {
+#we_can_be_heroes .details h2, #we_can_be_heroes .details p {
 	margin-bottom: 0;
 }
-#index_hero .details h2 {
+#we_can_be_heroes .details h2 {
 	display: inline-block;
 	color: #000;
 }
@@ -165,20 +165,20 @@ a img {
 }
 
 #images li {
-	float: left;
+/*	float: left;*/
 	margin-bottom: 15px;
 	margin-right: 10px;
 }
 
 #image_view {
-	height: 600px;
+	position: relative;
+	height: 500px;
 }
 
 #image_view li {
 	position: absolute;
 	top: 0;
 	left: 0;
-	margin-bottom: 100px;
 
 }
 

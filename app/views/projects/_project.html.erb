@@ -1,40 +1,37 @@
-<div class="grid_12">
-	<h1><%= @project.name %></h1>
-</div>
-<div class="grid_9" id="project_info">
-	<div id="description">
-	  <%= @project.description.html_safe %>
+<div id="project" style="oveflow-y: auto;">
+	<div class="grid_12">
+		<h1><%= @project.name %></h1>
 	</div>
-	<div id="worked">
-	  <em><%= @project.client.name %></em><br/>
-	  <%= @project.worked_on.strftime("%Y") %>
+	<div class="grid_3" id="project_info">
+		<div id="description">
+		  <%= @project.description.html_safe %>
+		</div>
+		<div id="worked">
+		  <em><%= @project.client.name %></em><br/>
+		  <%= @project.worked_on.strftime("%Y") %>
+		</div>
+		<div id="links">
+			<ul>
+				<% @project.links.each do |link| %>
+					<li><%= link_to link.title, link.url %></li>
+				<% end%>
+			</ul>
+		</div>
 	</div>
-</div>
-<div class="grid_3">
-	<div id="links">
-		<ul>
-			<% @project.links.each do |link| %>
-				<li><%= link_to link.title, link.url %></li>
-			<% end%>
+	<div class="grid_9">
+		<ul id="image_view">
+			<% @images.each do |image| %>
+				<li id="image_<%= image.id %>" data-id="<%= image.id %>">
+					<a href="<%= image.image.url %>"><img src="<%= image.image.display.url %>"/></a>
+				</li>
+			<% end %>
 		</ul>
 	</div>
+	<div class="clear"></div>
+	
 </div>
-<div class="clear"></div>
-<div class="grid_3">
-	<ul id="images" class="<% if current_user %>admin<% end %>">
-	<% @images.each do |image| %>
-		<li id="image_<%= image.id %>" data-id="<%= image.id %>">
-			<a href="<%= image.image.url %>"><img width="200" src="<%= image.image.small.url %>"/></a>
-		</li>
-	<% end %>
-	</ul>
-</div>
-<div class="grid_9" id="">
-	<ul id="image_view">
-	</ul>
-</div>
-<div class="clear"></div>
 
+<% if current_user %>
 <script type="text/javascript" charset="utf-8">
 $(function(){
 	$('#images.admin').sortable({
@@ -56,3 +53,4 @@ $(function(){
 	});
 });
 </script>
+<% end %>
