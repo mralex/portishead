@@ -1,0 +1,11 @@
+name: Portishead
+twitter:
+    key: CONSUMER_KEY
+    secret: CONSUMER_SECRET
+deploy:
+    application: portishead
+social:
+    twitter: USERNAME
+    flickr: USERNAME
+    dribbble: USERNAME
+    linkedin: /in/USERNAME

@@ -433,6 +433,19 @@ li.image p {
 	font-weight: bold;
 }
 
+#social {
+	margin-top: 40px;
+	margin-bottom: 50px;
+	padding-top: 20px;
+	border-top: 1px solid #2a2a2a;
+	border-bottom: 1px solid #2a2a2a;
+	text-align: center;
+}
+
+#social a {
+	color: rgba(255, 255, 255, 0.5);
+	text-shadow: none;
+}
 
 /* Admin */
 .dashboard_model {
