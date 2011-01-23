@@ -27,8 +27,9 @@
 						<img src="<%= image.image.thumb.url %>" />
 					</li>
 				<% end %>
+				<div class="clear"></div>
 			</ul>
-			<div class="clear"></div>
+			<strong><%= link_to "Edit Project", edit_project_path(@project) %></strong>
 		</div>
 		<% end %>
 	</div>

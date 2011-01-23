@@ -196,8 +196,12 @@ a img {
 	font-size: 10px;
 }
 
-#image_sorter h5 {
+#image_sorter h5, #images {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+#images {
+	margin-bottom: 5px;
 }
 
 #images li, #image_view li {
