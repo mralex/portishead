@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   end
   
   def login
-    if Rails.env.development?
+    if Rails.env.development? && User.first
       session[:user_id] = User.first.id
       redirect_to root_url, :notice => "Signed in"
     else
