@@ -17,6 +17,20 @@
 				<% end%>
 			</ul>
 		</div>
+		<% if current_user %>
+		<div id="image_sorter">
+			<h5>Image Order</h5>
+			<div id="image_sorter_hide"><a href="#">TOGGLE</a></div>
+			<ul id="images" class="admin">
+				<% @images.each do |image| %>
+					<li id="image_<%= image.id %>" data-id="<%= image.id %>">
+						<img src="<%= image.image.thumb.url %>" />
+					</li>
+				<% end %>
+			</ul>
+			<div class="clear"></div>
+		</div>
+		<% end %>
 	</div>
 	<div class="grid_9">
 		<ul id="image_view">
@@ -39,6 +53,12 @@
 <% if current_user %>
 <script type="text/javascript" charset="utf-8">
 $(function(){
+	$("#image_sorter_hide a").click(function(e) {
+		$('#images').slideToggle();
+		e.preventDefault();
+		return false;
+	});
+	
 	$('#images.admin').sortable({
 		dropOnEmpty: false,
 		items: 'li',
@@ -50,9 +70,7 @@ $(function(){
 				type: 'post',
 				data: $('#images.admin').sortable('serialize'),
 				datatype: 'script',
-				complete: function(request) {
-					$('#images.admin').effect('highlight');
-				},url: '<%= sort_project_images_path @project %>'
+				url: '<%= sort_project_images_path @project %>'
 			});
 		}
 	});
