@@ -5,6 +5,9 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag "jquery.min", "jquery-ui.min", "jquery.history", "rails", :defaults %>
 
+  <script type="text/javascript" src="http://use.typekit.com/ync8dol.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
 </head>
@@ -12,14 +15,14 @@
 
 
 	<div id="header" class="container_12">
-		<div class="grid_2">
+		<div class="grid_12 alpha omega">
 			<h1><a href="/"><%= APP_CONFIG["name"] %></a></h1>
-		</div>
-		<div id="subhead" class="grid_10">
-			<h5><em>Design <strong>&amp;</strong> development portfolio</em></h5>
-			<div id="pages">
-				<a href="/about">About</a>
-				<a href="/contact">Contact</a>
+			<div id="subhead">
+				<h5><em>Design <strong>&amp;</strong> development portfolio</em></h5>
+				<div id="pages">
+					<a href="/about">About</a>
+					<a href="/contact">Contact</a>
+				</div>
 			</div>
 		</div>
 	<% if current_user %>
