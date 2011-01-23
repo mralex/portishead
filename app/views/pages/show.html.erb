@@ -1,9 +1,13 @@
-<h1><%= @page.title %></h1>
-
-<div>
-  <%= @page.content %>
-</div>
-
+<% title @page.title %>
 <% if current_user %>
-<%= link_to 'Edit', edit_page_path(@page) %>
+	<% content_for :nav do %>
+		| <strong><%= link_to 'Edit Page', edit_page_path(@page) %></strong>
+	<% end %>
 <% end %>
+
+<h1 class="grid_12"><%= @page.title %></h1>
+
+<div id="page">
+  <%= @page.content.html_safe %>
+  <div class="clear"></div>
+</div>
