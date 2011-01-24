@@ -255,7 +255,7 @@ a img {
 #image_view_nav a {
 	position: absolute;
 	display: inline-block;
-	width: 150px;
+	width: 30%;
 	height: 100%;
 	text-align: center;
 	background: rgba(0, 0, 0, 0);
