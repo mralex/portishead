@@ -258,20 +258,20 @@ a img {
 	width: 30%;
 	height: 100%;
 	text-align: center;
-	background: rgba(0, 0, 0, 0);
-
+	background: rgba(0, 0, 0, 0.5);
+	
 	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
 	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 #image_view_nav a span {
-	display: none;
+	display: inline-block;
 	padding-top: 230px;
 }
 
-#image_view_nav a:hover {
+#image_view_nav a:hover, #image_view_nav a:active {
 	text-decoration: none;
-	background: rgba(0, 0, 0, 0.75);
+	opacity: 1 !important;
 }
 
 #image_view_nav a:hover span {
