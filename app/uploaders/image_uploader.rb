@@ -30,8 +30,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
   
   def filename
-    #Time.now.to_i.to_s + File.extname(@filename) if @filename
-    Time.now.to_i.to_s + ".png" if @filename
+    Time.now.to_i.to_s + File.extname(@filename) if @filename
+    #Time.now.to_i.to_s + ".png" if @filename
   end
   
   def resize_and_crop(width, height)
