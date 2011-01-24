@@ -1,6 +1,7 @@
+html { background: #ddd;}
 body {
 	font-family: "helvetica neue", helvetica, arial, sans-serif;
-	background: #eee;
+	background: #ddd;
 	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));
 	color: #333;
 	letter-spacing: 0.06em;
@@ -33,7 +34,7 @@ a img {
 }
 
 #header h1 {
-	background-color: #f50;
+	background-color: #222;
 	padding: 10px 10px;
 	margin-right: 20px;
 	float: left;
@@ -48,11 +49,11 @@ a img {
 }
 
 #header h1 a {
-	color: #fff;
+	color: #00deff;
 }
 
 #subhead {
-	color: #f30;
+	color: #555;
 	padding-top: 21px;
 	width: 950px;
 /*	margin-left: -20px;*/
@@ -79,13 +80,17 @@ a img {
 	display: inline-block;
 	padding: 1px 8px;
 	margin-left: 10px;
-	background: #f50;
+	background: #00deff;
 	-webkit-border-radius: 25px;
 	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 	-moz-border-radius: 25px;
 	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 }
-
+#pages a {
+	color: #111;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.17);
+}
 #project .links a {
 	background: rgba(0, 0, 0, 0.35);
 	
