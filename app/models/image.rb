@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  belongs_to :project, :dependent => :destroy
+  belongs_to :project
   acts_as_list :scope => :project
   mount_uploader :image, ImageUploader
   

@@ -4,8 +4,8 @@ class Project < ActiveRecord::Base
   belongs_to :category
   belongs_to :client
   
-  has_many :images
-  has_many :links
+  has_many :images, :dependent => :destroy
+  has_many :links, :dependent => :destroy
   
   validates_presence_of :name
   validates_presence_of :client
