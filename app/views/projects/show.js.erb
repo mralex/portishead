@@ -10,11 +10,6 @@ $(function() {
 	var firstSlide = $("#image_view li:first");
 	var lastSlide = $("#image_view li:last");
 
-	$("#image_view li").hide();
-	
-	firstSlide.show();
-	firstSlide.addClass("visible");
-
 	$("#image_view_nav a.next").click(function(e) {
 		var current = $("#image_view li.visible");
 		var next = current.next();

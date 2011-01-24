@@ -20,8 +20,13 @@ $(function() {
 					// Animate height change?
 					$("#index_hero").css("height", $("#content_box").height());
 					
+					$("#image_view li").hide();
+					var firstSlide = $("#image_view li:first");
+					firstSlide.show();
+					firstSlide.addClass("visible");
+					
 					$("#content_box").show('slide', {direction: 'right'}, 300, function() {
-						updateNavHeight($("#image_view li:first"));
+						updateNavHeight(firstSlide);
 					});
 					
 					$("#content_box").animate({opacity: 1},{duration: 200, queue: false});
