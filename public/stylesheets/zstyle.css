@@ -200,31 +200,15 @@ a img {
 	padding-bottom: 20px;
 }
 
-#images, #image_view, #projects {
+#project h1 {
+	margin-bottom: 0;
+}
+
+#images, #image_view ul, #projects {
 	position: relative;
 	list-style: none;
 	margin: 0;
 	padding: 0;
-}
-
-#image_sorter {
-	background: rgba(255, 255, 255, 0.05);
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	margin: 30px 0;
-	padding: 5px;
-	position: relative;
-}
-
-#image_sorter_hide {
-	position: absolute;
-	right: 5px;
-	top: 13px;
-	font-size: 10px;
-}
-
-#image_sorter h5, #images {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 #images {
@@ -244,7 +228,7 @@ a img {
 
 #image_view {
 	position: relative;
-	height: 500px;
+	min-height: 500px;
 }
 
 #image_view li {
@@ -262,26 +246,29 @@ a img {
 
 #image_view_nav {
 	position: absolute;
-	top: 16px;
-	right: 0;
+	top: 0px;
+	left: 0;
+	width: 100%;
+	vertical-align: middle;
 }
 
 #image_view_nav a {
+	position: absolute;
 	display: inline-block;
-	min-width: 50px;
+	width: 100px;
+	height: 100%;
 	text-align: center;
-	padding: 5px 10px;
-	border: 1px solid #888;
-	background: -webkit-gradient(linear, left top, left bottom, from(#bbb), to(#888));
-	background: -moz-linear-gradient(top center, #1f1f1f, #111111);
+	background: rgba(0, 0, 0, 0.75);
 
 	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
 	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
 	
 	text-shadow: 0 1px 0 #777;
-	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
+}
+
+#image_view_nav a span {
+	display: inline-block;
+	padding-top: 230px;
 }
 
 #image_view_nav a:hover {
@@ -304,11 +291,11 @@ a img {
 }
 
 #image_view_nav .next {
-	float: right;
+	right: 0;
 }
 
 #image_view_nav .prev {
-	float: left;
+	left: 0;
 }
 
 #projects li {
@@ -420,8 +407,11 @@ li.image p {
 	width: 300px;
 */
 	position: relative;
-	padding-bottom: 50px;
-	margin-bottom: 25px;
+}
+
+#project_info #description {
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
 }
 
 #project_images {
@@ -512,6 +502,26 @@ li.image p {
 }
 
 /* Admin */
+#image_sorter {
+	background: rgba(255, 255, 255, 0.05);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	margin: 30px 0;
+	padding: 5px;
+	position: relative;
+}
+
+#image_sorter_hide {
+	position: absolute;
+	right: 5px;
+	top: 13px;
+	font-size: 10px;
+}
+
+#image_sorter h5 {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
 .dashboard_model {
 	background: rgba(0, 0, 0, 0.25);
 	padding: 5px 10px 10px;

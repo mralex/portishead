@@ -2,53 +2,57 @@
 	<div class="grid_12">
 		<h1><%= @project.name %></h1>
 	</div>
-	<div class="grid_3" id="project_info">
-		<div id="description">
-		  <%= @project.description.html_safe %>
+	<div class="grid_9">
+		<div  id="project_info">
+			<div id="description">
+			  <%= @project.description.html_safe %>
+			</div>
+			<!-- <div id="worked">
+			  <em><%= @project.client.name %></em><br/>
+			  <%= @project.worked_on.strftime("%Y") %>
+			</div> -->
 		</div>
-		<div id="worked">
-		  <em><%= @project.client.name %></em><br/>
-		  <%= @project.worked_on.strftime("%Y") %>
+		<div id="image_view">
+			<ul>
+				<% @images.each do |image| %>
+					<li id="image_<%= image.id %>" data-id="<%= image.id %>">
+						<a href="<%= image.image.url %>"><img src="<%= image.image.display.url %>"/></a>
+					</li>
+				<% end %>
+			</ul>
+			<% if @images.length > 1 %>
+			<div id="image_view_nav">
+				<a class="prev" href="#"><span>Previous</span></a>
+				<a class="next" href="#"><span>Next</span></a>
+			</div>
+			<% end %>
 		</div>
+	</div>
+	<div class="grid_3">
 		<div class="links">
 			<ul>
 				<% @project.links.each do |link| %>
 					<li><%= link_to link.title, link.url %></li>
 				<% end%>
 			</ul>
-		</div>
-		<% if current_user %>
-		<div id="image_sorter">
-			<h5>Image Order</h5>
-			<div id="image_sorter_hide"><a href="#">TOGGLE</a></div>
-			<ul id="images" class="admin">
-				<% @images.each do |image| %>
-					<li id="image_<%= image.id %>" data-id="<%= image.id %>">
-						<img src="<%= image.image.thumb.url %>" />
-					</li>
-				<% end %>
-				<div class="clear"></div>
-			</ul>
-			<strong><%= link_to "Edit Project", edit_project_path(@project) %></strong>
-		</div>
-		<% end %>
-	</div>
-	<div class="grid_9">
-		<ul id="image_view">
-			<% @images.each do |image| %>
-				<li id="image_<%= image.id %>" data-id="<%= image.id %>">
-					<a href="<%= image.image.url %>"><img src="<%= image.image.display.url %>"/></a>
-				</li>
+			<% if current_user %>
+			<div id="image_sorter">
+				<h5>Image Order</h5>
+				<div id="image_sorter_hide"><a href="#">TOGGLE</a></div>
+				<ul id="images" class="admin">
+					<% @images.each do |image| %>
+						<li id="image_<%= image.id %>" data-id="<%= image.id %>">
+							<img src="<%= image.image.thumb.url %>" />
+						</li>
+					<% end %>
+					<div class="clear"></div>
+				</ul>
+				<strong><%= link_to "Edit Project", edit_project_path(@project) %></strong>
+			</div>
 			<% end %>
-		</ul>
+		</div>
 	</div>
 	<div class="clear"></div>
-	<% if @images.length > 1 %>
-	<div class="grid_3" id="image_view_nav">
-		<a class="prev" href="#">Previous Image</a>
-		<a class="next" href="#">Next Image</a>
-	</div>
-	<% end %>
 </div>
 
 <% if current_user %>
