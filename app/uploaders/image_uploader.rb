@@ -18,7 +18,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
   
   version :display do
-    process :pad_and_sharpen => [700, 500]
+    process :resize_to_fit => [700, 700]
   end
   
   version :small do
