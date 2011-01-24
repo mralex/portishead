@@ -27,7 +27,7 @@ $(function() {
 					
 					$("#content_box").show('slide', {direction: 'right'}, 300, function() {
 						updateNavHeight(firstSlide);
-						$("#image_view_nav a").delay(500).animate({opacity: 0}, {duration: 300});
+						$("#image_view_nav a").delay(700).animate({opacity: 0}, {duration: 400});
 					});
 					
 					$("#content_box").animate({opacity: 1},{duration: 200, queue: false});
