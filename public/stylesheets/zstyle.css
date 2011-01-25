@@ -203,10 +203,12 @@ a img {
 
 #project {
 	position: relative;
-	border-top: 1px solid #bbb;
-	border-bottom: 1px solid #aaa;
+	border-top: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
 	padding-top: 10px;
 	padding-bottom: 20px;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 #project h1 {
@@ -478,8 +480,12 @@ li.image p {
 	margin-top: 40px;
 	margin-bottom: 50px;
 	padding-top: 20px;
-	border-top: 1px solid #a0a0a0;
-	border-bottom: 1px solid #a0a0a0;
+	border-top: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
+	
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	
 	text-align: center;
 }
 
@@ -514,8 +520,9 @@ li.image p {
 }
 
 #page .blob {
-	border-bottom:1px solid #ccc;
+	border-bottom:1px solid #c0c0c0;
 	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 	margin-bottom: 10px;
 }
 /* Admin */
