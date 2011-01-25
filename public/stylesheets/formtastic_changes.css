@@ -14,9 +14,9 @@ form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 --------------------------------------------------------------------------------------------------*/
 
 form.formtastic {
-	background-color: #eee;
-	border: 1px solid #fff;
-	color: #333;
+	background-color: #222;
+	border: 1px solid #aaa;
+	color: #fff;
 	padding: 20px;
 	
 	-webkit-border-radius: 10px;
