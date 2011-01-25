@@ -17,15 +17,16 @@ $(function() {
 			$("#content_box").animate({opacity: 0},{duration: 800, queue: false});
 			$("#content_box").hide('slide', {direction: 'left', queue: false}, 600, function(e) {
 				$.getScript(url + '.js', function(e) {
-					// Animate height change?
 					$("#index_hero").animate({height: $("#content_box").height()}, {duration: 400});
 					
-					$("#image_view li").hide();
 					var firstSlide = $("#image_view li:first");
+
+					$("#image_view li").hide();
 					firstSlide.show();
 					firstSlide.addClass("visible");
 					
 					$("#content_box").show('slide', {direction: 'right'}, 300, function() {
+						// Find the tallest image
 						var tallest = 0;
 						$("#image_view li").each(function(e) {
 							if ($(this).height() > tallest) tallest = $(this).height();

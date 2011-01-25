@@ -3,6 +3,7 @@ body {
 	font-family: "helvetica neue", helvetica, arial, sans-serif;
 	background: #ddd;
 	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));
+	background: -moz-linear-gradient(top, #fff, #ddd);
 	color: #333;
 	letter-spacing: 0.06em;
 	text-rendering: optimizeLegibility;
@@ -29,8 +30,15 @@ a img {
 
 #header {
 	color: #fff;
+	margin-top: -55px;
 	margin-bottom: 20px;
 	position: relative;
+}
+
+#header_bar {
+	background: #1a1a1a;
+	position: relative;
+	height: 55px;
 }
 
 #header h1 {
@@ -53,7 +61,7 @@ a img {
 }
 
 #subhead {
-	color: #555;
+	color: #ccc;
 	padding-top: 21px;
 	width: 950px;
 /*	margin-left: -20px;*/
@@ -82,14 +90,14 @@ a img {
 	margin-left: 10px;
 	background: #00deff;
 	-webkit-border-radius: 25px;
-	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
 	-moz-border-radius: 25px;
-	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 #pages a {
 	color: #111;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-	-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.17);
+/*	-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.17);*/
 }
 #project .links a {
 	background: rgba(0, 0, 0, 0.35);
@@ -100,14 +108,14 @@ a img {
 #project .links a:hover {
 	text-decoration: none;
 	background: rgba(47, 47, 59, 0.75);
-	-webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
-	-moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
+/*	-webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
+	-moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);*/
 }
 
 #pages a:hover {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	background: -webkit-gradient(linear, left top, left bottom, from(#f20), to(#f50));
+/*	-webkit-box-shadow: none;
+	-moz-box-shadow: none;*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#80ffff), to(#00deff));
 }
 
 #nav {
