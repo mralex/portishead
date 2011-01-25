@@ -35,7 +35,7 @@ $(function() {
 						$("#image_view").animate({height: tallest});
 						
 						updateNavHeight(firstSlide);
-						$("#image_view_nav a").delay(700).animate({opacity: 0}, {duration: 400});
+						$("#image_view_nav a").delay(600).animate({opacity: 0}, {duration: 400});
 					});
 					
 					$("#content_box").animate({opacity: 1},{duration: 400, queue: false});
