@@ -166,8 +166,8 @@ a img {
 	left: 10px;
 	top: 0px;
 	overflow: hidden;
-	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.85);
-	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.85);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
 	background: rgba(255, 255, 255, 0.08);
 }
 
