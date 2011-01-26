@@ -27,6 +27,13 @@ $(function() {
 					firstSlide.addClass("visible");
 					
 					$("#content_box").show('slide', {direction: 'right'}, 300, function() {
+						var tallest = 0;
+						$("#image_view li").each(function(e) {
+							if ($(this).height() > tallest) tallest = $(this).height();
+						});
+						$("#image_view").animate({height: tallest});
+						$("#project").animate({height: $("#content_box").height()});
+						
 						updateNavHeight(firstSlide);
 						$("#image_view_nav a").delay(600).animate({opacity: 0}, {duration: 400});
 					});
