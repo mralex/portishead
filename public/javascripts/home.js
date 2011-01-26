@@ -31,8 +31,15 @@ $(function() {
 						$("#image_view li").each(function(e) {
 							if ($(this).height() > tallest) tallest = $(this).height();
 						});
-						$("#image_view").animate({height: tallest});
-						$("#project").animate({height: $("#content_box").height()});
+						
+						if (tallest > 0) {
+							var projectHeight = $("#content_box").height() - $("#image_view").height() + tallest;
+							
+							if (projectHeight != $("#content_box").height()) {
+								$("#project").animate({height: projectHeight}, {duration: 200});
+								$("#index_hero").animate({height: projectHeight + 2}, {duration: 200});
+							}
+						}
 						
 						updateNavHeight(firstSlide);
 						$("#image_view_nav a").delay(600).animate({opacity: 0}, {duration: 400});
