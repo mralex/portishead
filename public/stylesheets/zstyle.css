@@ -31,6 +31,15 @@ a img {
 .container_12 {
 }
 
+#flash_notice {
+	position: fixed;
+	top: 75px;
+	left: 0;
+	padding: 5px 10px;
+	background: #000;
+	color: #fff;
+}
+
 #header {
 	color: #fff;
 	margin-top: -55px;
