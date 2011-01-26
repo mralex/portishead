@@ -10,6 +10,10 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+small {
+	font-size: 11px;
+}
+
 h1, h2, h3, h4, h5 {
 	font-family: "proxima-nova-1","proxima-nova-2", "helvetica neue", helvetica, arial, sans-serif;
 }
@@ -550,10 +554,10 @@ li.image p {
 }
 
 .dashboard_model {
-	background: rgba(0, 0, 0, 0.25);
+	background: rgba(0, 0, 0, 0.85);
 	padding: 5px 10px 10px;
 	margin-bottom: 20px;
-	
+	color: #eee;
 	-webkit-border-radius: 5px;
 }
 
