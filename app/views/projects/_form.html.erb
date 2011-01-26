@@ -1,7 +1,10 @@
 <%= semantic_form_for(@project, :html => {:multipart => true}) do |f| %>
 	<%= f.inputs do %>
 		<%= f.input :name %>
+	<ol class="inline">
 		<%= f.input :client %>
+		<li id="new_client">[ <strong><a href="#">New Client</a></strong> ]</li>
+	</ol>
 			<%= f.inputs :for => :client, :id => "client_form" do |c| %>
 				<h3>New Client</h3>
 				<%= c.input :name %>
@@ -9,7 +12,10 @@
 			<% end %>
 		
 	  	<%= f.input :description %>
+	<ol class="inline">
 		<%= f.input :category %>
+			<li id="new_category">[ <strong><a href="#">New Category</a></strong> ]</li>
+	</ol>
 			<%= f.inputs :for => :category, :id => "category_form" do |c| %>
 				<h3>New Category</h3>
 				<%= c.input :name %>

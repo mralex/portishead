@@ -25,11 +25,24 @@ form.formtastic {
 	-moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.75);
 }
 
+form.formtastic span,
+form.formtastic label {
+	color: #fff;
+}
+
+form.formtastic p {
+	margin-bottom: 20px;
+}
+
+form.formtastic strong {
+	font-weight: bold;
+}
+
 form.formtastic #images_form,
 form.formtastic #links_form, 
 form.formtastic #client_form,
 form.formtastic #category_form {
-	background: #ddd;
+	background: #444;
 	padding: 10px;
 	-webkit-border-radius: 9px;
 	-webkit-box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.25);
@@ -88,3 +101,15 @@ form.formtastic fieldset > ol > li label {
 form.formtastic fieldset > ol > li.text textarea {
 	width: 85%;
 }
+
+
+form.formtastic .inline li {
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+form.formtastic .inline li label {
+	display: inline-block;
+	width: 110px;
+}
+/*form.formtastic fieldset > ol > li label { display:block; width:25%; float:left; padding-top:.2em; }*/

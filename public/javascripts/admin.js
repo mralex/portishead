@@ -45,4 +45,18 @@ $(function() {
 		$(".hero_check").attr("checked", false);
 		$(this).attr("checked", true);
 	});
+	
+	
+	$("#category_form").hide();
+	$("#client_form").hide();
+	
+	$("#new_client a").click(function() { 
+		$("#client_form").slideDown('fast');
+		$("#new_client").hide();
+	});
+
+	$("#new_category a").click(function() { 
+		$("#category_form").slideDown('fast');
+		$("#new_category").hide();
+	});
 });
