@@ -3,6 +3,8 @@ class Image < ActiveRecord::Base
   acts_as_list :scope => :project
   mount_uploader :image, ImageUploader
   
+  before_save :update_dimensions
+  
   validates_presence_of :title
   
   scope :visible, where("hidden = ?", false)
@@ -19,5 +21,12 @@ class Image < ActiveRecord::Base
   
   def thumb
     image.thumb
+  end
+  
+  private
+  def update_dimensions
+    display = Magick::Image.read(Rails.root.to_s + "/public" + self.image.display.url).first
+    self.display_width = display.columns
+    self.display_height = display.rows
   end
 end

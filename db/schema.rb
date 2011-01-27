@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110118025528) do
+ActiveRecord::Schema.define(:version => 20110127045316) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(:version => 20110118025528) do
     t.integer  "position"
     t.boolean  "hero"
     t.boolean  "hidden"
+    t.integer  "display_width"
+    t.integer  "display_height"
   end
 
   create_table "links", :force => true do |t|

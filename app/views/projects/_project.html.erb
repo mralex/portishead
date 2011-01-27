@@ -12,11 +12,11 @@
 			  <%= @project.worked_on.strftime("%Y") %>
 			</div> -->
 		</div>
-		<div id="image_view">
+		<div id="image_view" style="height: <%= @max_height %>px;">
 			<ul>
 				<% @images.each do |image| %>
 					<li id="image_<%= image.id %>" data-id="<%= image.id %>">
-						<a href="<%= image.image.url %>"><img src="<%= image.image.display.url %>"/></a>
+						<a href="<%= image.image.url %>"><img src="<%= image.image.display.url %>" width="<%= image.display_width %>" height="<%= image.display_height %>"/></a>
 					</li>
 				<% end %>
 			</ul>

@@ -32,6 +32,11 @@ class ProjectsController < ApplicationController
     @project = Project.find_by_slug(params[:id])
     @images = @project.visible_images.order(:position)
     
+    @max_height = 0
+    @images.each do |i|
+      @max_height = i.display_height if i.display_height > @max_height
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @project }
