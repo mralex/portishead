@@ -27,22 +27,24 @@ $(function() {
 					firstSlide.addClass("visible");
 					
 					$("#content_box").show('slide', {direction: 'right'}, 300, function() {
-						var tallest = 0;
-						$("#image_view li").each(function(e) {
-							if ($(this).height() > tallest) tallest = $(this).height();
-						});
+						$("#content_box img").load(function() {
+							var tallest = 0;
+							$("#image_view li").each(function(e) {
+								if ($(this).height() > tallest) tallest = $(this).height();
+							});
 						
-						if (tallest > 0) {
-							var projectHeight = $("#content_box").height() - $("#image_view").height() + tallest;
+							if (tallest > 0) {
+								var projectHeight = $("#content_box").height() - $("#image_view").height() + tallest;
 							
-							if (projectHeight != $("#content_box").height()) {
-								$("#project").animate({height: projectHeight}, {duration: 200});
-								$("#index_hero").animate({height: projectHeight + 2}, {duration: 200});
+								if (projectHeight != $("#content_box").height()) {
+									$("#project").animate({height: projectHeight}, {duration: 200});
+									$("#index_hero").animate({height: projectHeight + 2}, {duration: 200});
+								}
 							}
-						}
 						
-						updateNavHeight(firstSlide);
-						$("#image_view_nav a").delay(600).animate({opacity: 0}, {duration: 400});
+							updateNavHeight(firstSlide);
+							$("#image_view_nav a").delay(600).animate({opacity: 0}, {duration: 400});
+						});
 					});
 					
 					$("#content_box").animate({opacity: 1},{duration: 400, queue: false});
