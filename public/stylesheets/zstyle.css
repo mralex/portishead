@@ -226,6 +226,7 @@ a img {
 	font-size: 14px;
 	-webkit-column-count: 2;
 	-moz-column-count: 2;
+	margin-bottom: 20px;
 }
 
 #project_side_info {
@@ -413,7 +414,9 @@ bottom: 15px;
 	position: relative;
 }
 
-#projects .project .project_info h3 {
+#projects .project .project_info h3,
+#projects .project .project_info .client,
+#projects .project .project_info .category {
 	margin-bottom: 0;
 }
 
@@ -427,7 +430,6 @@ bottom: 15px;
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	margin-bottom: 0;
 } 
 
 li.image {
