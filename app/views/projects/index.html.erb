@@ -20,7 +20,7 @@
 <% @projects.each do |project| %>
 <% if  @projects.index(project) % 3 == 0 %>
 	<li id="project_<%= project.id %>" class="grid_4 alpha">
-<% elsif @projects.index(project) % 2 == 0%>
+<% elsif @projects.index(project) % 3 == 2%>
 	<li id="project_<%= project.id %>" class="grid_4 omega">
 <% else %>
 	<li id="project_<%= project.id %>" class="grid_4">
