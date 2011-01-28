@@ -1,8 +1,7 @@
 <div id="project">
-	<div class="grid_12">
-		<h1><%= @project.name %></h1>
-	</div>
 	<div class="grid_9">
+		<h1><%= @project.name %></h1>
+
 		<div  id="project_info">
 			<div id="description">
 			  <%= @project.description.html_safe %>
@@ -24,7 +23,7 @@
 			<% end %>
 		</div>
 	</div>
-	<div class="grid_3">
+	<div class="grid_3" id="project_side_info">
 		<div class="links">
 			<ul>
 				<% @project.links.each do |link| %>
