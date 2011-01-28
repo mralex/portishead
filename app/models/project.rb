@@ -32,6 +32,10 @@ class Project < ActiveRecord::Base
     slug
   end
   
+  def worked_on_year
+    worked_on.strftime("%Y")
+  end
+  
   private
   def parameterize_name
     self.slug = self.name.parameterize

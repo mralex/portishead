@@ -33,8 +33,8 @@
 					<% end %>
 					<h3><%= project.name %></h3>
 				</a>
-				<p class="client"><em><%= project.client.name %></em></p>
-				<p class="category"><em><%= project.category.name %></em></p>
+				<p class="client"><em><%= project.client.name %></em><br/><small><%= project.worked_on_year %></small></p>
+				<p class="category"><em><%= project.category.name %></em><br/>&nbsp;</p>
 			</div>
 			<% if current_user %>
 			    <%= link_to 'Edit', edit_project_path(project) %> |
