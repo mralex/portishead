@@ -7,10 +7,6 @@
 			<div id="description">
 			  <%= @project.description.html_safe %>
 			</div>
-			<!-- <div id="worked">
-			  <em><%= @project.client.name %></em><br/>
-			  <%= @project.worked_on.strftime("%Y") %>
-			</div> -->
 		</div>
 		<div id="image_view" style="height: <%= @max_height %>px;">
 			<ul>
@@ -51,6 +47,11 @@
 			</div>
 			<% end %>
 		</div>
+		<ul class="details">
+			<li><em><%= @project.client.name %></em></li>
+			<li><%= @project.category.name %></li>
+			<li><%= @project.worked_on.strftime("%Y") %></li>
+		</ul>
 	</div>
 	<div class="clear"></div>
 </div>

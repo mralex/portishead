@@ -126,6 +126,20 @@ a img {
 	-moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);*/
 }
 
+#project ul.details {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border-top: 1px solid #ccc;
+	font-size: 12px;
+}
+
+#project ul.details li {
+	border-bottom: 1px solid #ccc;
+	margin: 0;
+	padding: 5px 10px;
+}
+
 #pages a:hover {
 /*	-webkit-box-shadow: none;
 	-moz-box-shadow: none;*/
@@ -401,6 +415,8 @@ li.image p {
 }
 
 #project_info #description {
+	font-family: "ff-meta-serif-web-pro-1","ff-meta-serif-web-pro-2", georgia, serif;
+	font-size: 14px;
 	-webkit-column-count: 2;
 	-moz-column-count: 2;
 }
