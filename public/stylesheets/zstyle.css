@@ -5,7 +5,7 @@ body {
 	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dfdfdf));
 	background: -moz-linear-gradient(top, #fff, #dfdfdf);
 	color: #333;
-	letter-spacing: 0.06em;
+/*	letter-spacing: 0.06em;*/
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
@@ -15,7 +15,7 @@ small {
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: "proxima-nova-1","proxima-nova-2", "helvetica neue", helvetica, arial, sans-serif;
+	font-family: "ff-dagny-web-pro-1","ff-dagny-web-pro-2", "helvetica neue", helvetica, arial, sans-serif;
 }
 
 a, a:visited {
