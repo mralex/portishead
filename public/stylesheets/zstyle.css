@@ -6,7 +6,7 @@ body {
 	background: -moz-linear-gradient(top, #fff, #dfdfdf);
 	color: #333;
 /*	letter-spacing: 0.06em;*/
-	text-rendering: optimizeLegibility;
+/*	text-rendering: optimizeLegibility;*/
 	-webkit-font-smoothing: antialiased;
 }
 
