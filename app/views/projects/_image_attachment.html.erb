@@ -1,7 +1,8 @@
 
 	<%= i.input :title %>
 	<%= i.input :image, :as => :file %>
-	<%= i.input :hidden %>
-	<%= i.input :hero, :input_html => {:class => "hero_check"} %>
+	<%= i.input :hidden, :hint => "Hides from general image list, will appear if marked as hero and/or project list image" %>
+	<%= i.input :hero, :input_html => {:class => "hero_check"}, :hint => "940x300, 1 per project", :label => "Use for hero banner" %>
+	<%= i.input :project_list, :input_html => {:class => "project_list_check"}, :hint => "300x200, 1 per project", :label => "Use in projects list" %>
 	<%= i.input :_destroy, :as => :hidden %>
 	<li class="remove"><%= link_to "remove", "#", :class => "remove_image" %></li>

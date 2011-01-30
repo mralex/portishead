@@ -28,8 +28,8 @@
 		<div class="project">
 			<div class="project_info">
 				<a href="<%= project_path(project) %>" class="project_link">
-					<% if project.hero %>
-					<img src="<%= project.hero.image.small.url %>"/>
+					<% if project.project_image %>
+					<img src="<%= project.project_image.image.small.url %>"/>
 					<% end %>
 					<h3><%= project.name %></h3>
 				</a>

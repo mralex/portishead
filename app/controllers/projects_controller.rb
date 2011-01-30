@@ -58,6 +58,7 @@ class ProjectsController < ApplicationController
       @project.images.build
     end
     @project.images.first.hero = true
+    @project.images.first.project_list = true
 
     respond_to do |format|
       format.html # new.html.erb

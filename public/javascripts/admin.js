@@ -46,6 +46,10 @@ $(function() {
 		$(this).attr("checked", true);
 	});
 	
+	$(".project_list_check").live("click", function(e) {
+		$(".project_list_check").attr("checked", false);
+		$(this).attr("checked", true);
+	});
 	
 	$("#category_form").hide();
 	$("#client_form").hide();

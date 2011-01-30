@@ -28,6 +28,10 @@ class Project < ActiveRecord::Base
     images.hero.first
   end
   
+  def project_image
+    images.project.first
+  end
+  
   def to_param
     slug
   end
