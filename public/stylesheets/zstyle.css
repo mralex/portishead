@@ -473,12 +473,9 @@ li.image p {
 
 /* Page Styles */
 #page {
-/*	font-family: "ff-meta-serif-web-pro-1","ff-meta-serif-web-pro-2", sans-serif;*/
-
-/*	font-size: 15px;*/
+	font: 15px "ff-meta-serif-web-pro-1","ff-meta-serif-web-pro-2", georgia, sans-serif;
 	line-height: 1.8;
 	letter-spacing: 0.07em;
-	margin-bottom: 200px;
 	
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
 }
