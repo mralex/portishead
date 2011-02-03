@@ -1,6 +1,7 @@
 <%= semantic_form_for(@project, :html => {:multipart => true}) do |f| %>
 	<%= f.inputs do %>
 		<%= f.input :name %>
+		<%= f.input :private %>
 	<ol class="inline">
 		<%= f.input :client %>
 		<li id="new_client">[ <strong><a href="#">New Client</a></strong> ]</li>

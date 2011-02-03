@@ -18,6 +18,8 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :client, :reject_if => proc {|a| a['name'].blank? }
   accepts_nested_attributes_for :category, :reject_if => proc {|a| a['name'].blank? }
   
+  scope :public, where("private = ?", false)
+  
   acts_as_list
   
   def visible_images

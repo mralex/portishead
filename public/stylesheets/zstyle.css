@@ -571,6 +571,10 @@ li.image p {
 	background: #161d28;
 }
 
+.dashboard_model li.private {
+	background: #28161d;
+}
+
 .dashboard_placeholder {
 	background: #000 !important;
 	height: 50px;

@@ -11,14 +11,14 @@ class ProjectsController < ApplicationController
   end
   
   def heroes
-    @projects = Project.order(:position)
+    @projects = Project.public.order(:position)
     #render :js => @projects
   end
   
   # GET /projects
   # GET /projects.xml
   def index
-    @projects = Project.order(:position)
+    @projects = Project.public.order(:position)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,7 +29,11 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.xml
   def show
-    @project = Project.find_by_slug(params[:id])
+    if !current_user
+      @project = Project.public.find_by_slug(params[:id])
+    else 
+      @project = Project.find_by_slug(params[:id])
+    end
     @images = @project.visible_images.order(:position)
     
     @max_height = 0
