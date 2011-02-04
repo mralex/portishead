@@ -11,7 +11,7 @@
 			<ul>
 				<% @images.each do |image| %>
 					<li id="image_<%= image.id %>" data-id="<%= image.id %>">
-						<a href="<%= image.image.url %>"><img src="<%= image.image.display.url %>" width="<%= image.display_width %>" height="<%= image.display_height %>"/></a>
+						<img src="<%= image.image.display.url %>" width="<%= image.display_width %>" height="<%= image.display_height %>"/>
 					</li>
 				<% end %>
 			</ul>
