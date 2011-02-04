@@ -26,10 +26,7 @@ $(function() {
 					firstSlide.show();
 					firstSlide.addClass("visible");
 					
-					$("#content_box").show('slide', {direction: 'right'}, 300, function() {
-						updateNavHeight(firstSlide);
-						$("#image_view_nav a").delay(600).animate({opacity: 0}, {duration: 400});
-					});
+					$("#content_box").show('slide', {direction: 'right'}, 300);
 					
 					$("#content_box").animate({opacity: 1},{duration: 400, queue: false});
 					
