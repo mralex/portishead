@@ -1,9 +1,9 @@
-<div class="grid_12">
+<div id="dashboard">
 	<h1>Dashboard</h1>
 	
 	<div class="grid_4 dashboard_model alpha">
 		<h2>Projects (<%= @projects.length %>)</h2>
-		<%= link_to "+ Add", new_project_path %>
+		<%= link_to "+ Add", new_project_path, :class => "add_link" %>
 		<ul id="projects">
 			<% @projects.each do |project| %>
 				<li id="project_<%= project.id %>" class="<% if project.private %>private<% end %>">
@@ -42,9 +42,9 @@
 	});
 	</script>
 	
-	<div class="grid_3 dashboard_model">
+	<div class="grid_4 dashboard_model">
 		<h2>Categories (<%= @categories.length %>)</h2>
-		<%= link_to "+ Add", new_category_path %>
+		<%= link_to "+ Add", new_category_path, :class => "add_link" %>
 		<ul>
 			<% @categories.each do |category| %>
 				<li>
@@ -60,7 +60,7 @@
 	
 	<div class="grid_4 dashboard_model">
 		<h2>Clients (<%= @clients.length %>)</h2>
-		<%= link_to "+ Add", new_client_path %>
+		<%= link_to "+ Add", new_client_path, :class => "add_link" %>
 		<ul>
 			<% @clients.each do |client| %>
 				<li>
@@ -91,7 +91,7 @@
 	
 	<div class="grid_4 dashboard_model">
 		<h2>Pages (<%= @pages.length %>)</h2>
-		<%= link_to "+ Add", new_page_path %>
+		<%= link_to "+ Add", new_page_path, :class => "add_link" %>
 		<ul>
 			<% @pages.each do |page| %>
 				<li>
@@ -106,9 +106,11 @@
 	
 	<div class="grid_12 alpha dashboard_model">
 		<h2>Images (<%= @images.length %>)</h2>
+		<div class="images">
 		<% @images.each do |image| %>
-			<a href="<%= project_path(image.project) %>"><img src="<%= image.image.small.url %>" alt="<%= image.title %>" /></a>&nbsp;&nbsp;
+			<a href="<%= project_path(image.project) %>"><img src="<%= image.image.thumb.url %>" alt="<%= image.title %>" /></a>&nbsp;&nbsp;
 		<% end %>
+		</div>
 	</div>
-	
+	<div class="clear"></div>
 </div>
