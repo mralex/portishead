@@ -569,6 +569,25 @@ li.image p {
 	border-bottom: 1px solid #ddd;
 }
 
+.dashboard_model .meta {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	text-align: right;
+}
+
+.dashboard_model .meta .count {
+	display: inline-block;
+	color: #555;
+	background: #ddd;
+	margin-top: 7px;
+	padding: 2px 7px;
+	padding-top: 1px;
+	font-size: 11px;
+	-webkit-border-radius: 20px;
+	-webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
 .dashboard_model a {
 	color: #33a;
 	font-weight: bold;
@@ -576,9 +595,6 @@ li.image p {
 
 .dashboard_model a.add_link {
 	display: block;
-	position: absolute;
-	top: 5px;
-	right: 5px;
 	padding: 1px 7px;
 	background: #aaa;
 	color: #eee;

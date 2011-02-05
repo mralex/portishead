@@ -2,8 +2,11 @@
 	<h1>Dashboard</h1>
 	
 	<div class="grid_4 dashboard_model alpha">
-		<h2>Projects (<%= @projects.length %>)</h2>
-		<%= link_to "+ Add", new_project_path, :class => "add_link" %>
+		<h2>Projects</h2>
+		<div class="meta">
+			<%= link_to "+ Add", new_project_path, :class => "add_link" %>
+			<span class="count"><%= @projects.length %></span>
+		</div>
 		<ul id="projects">
 			<% @projects.each do |project| %>
 				<li id="project_<%= project.id %>" class="<% if project.private %>private<% end %>">
@@ -43,8 +46,11 @@
 	</script>
 	
 	<div class="grid_4 dashboard_model">
-		<h2>Categories (<%= @categories.length %>)</h2>
-		<%= link_to "+ Add", new_category_path, :class => "add_link" %>
+		<h2>Categories</h2>
+		<div class="meta">
+			<%= link_to "+ Add", new_category_path, :class => "add_link" %>
+			<span class="count"><%= @categories.length %></span>
+		</div>
 		<ul>
 			<% @categories.each do |category| %>
 				<li>
@@ -59,8 +65,11 @@
 	</div>
 	
 	<div class="grid_4 dashboard_model">
-		<h2>Clients (<%= @clients.length %>)</h2>
-		<%= link_to "+ Add", new_client_path, :class => "add_link" %>
+		<h2>Clients</h2>
+		<div class="meta">
+			<%= link_to "+ Add", new_client_path, :class => "add_link" %>
+			<span class="count"><%= @clients.length %></span>
+		</div>
 		<ul>
 			<% @clients.each do |client| %>
 				<li>
@@ -76,7 +85,10 @@
 	<div class="clear"></div>
 	
 	<div class="grid_4 dashboard_model alpha">
-		<h2>Links (<%= @links.length %>)</h2>
+		<h2>Links</h2>
+		<div class="meta">
+			<span class="count"><%= @links.length %></span>
+		</div>		
 		<ul>
 			<% @links.each do |link| %>
 				<li>
@@ -90,8 +102,11 @@
 	</div>
 	
 	<div class="grid_4 dashboard_model">
-		<h2>Pages (<%= @pages.length %>)</h2>
-		<%= link_to "+ Add", new_page_path, :class => "add_link" %>
+		<h2>Pages</h2>
+		<div class="meta">
+			<%= link_to "+ Add", new_page_path, :class => "add_link" %>
+			<span class="count"><%= @pages.length %></span>
+		</div>
 		<ul>
 			<% @pages.each do |page| %>
 				<li>
@@ -105,7 +120,10 @@
 	</div>
 	
 	<div class="grid_12 alpha dashboard_model">
-		<h2>Images (<%= @images.length %>)</h2>
+		<h2>Images</h2>
+		<div class="meta">
+			<span class="count"><%= @images.length %></span>
+		</div>
 		<div class="images">
 		<% @images.each do |image| %>
 			<a href="<%= project_path(image.project) %>"><img src="<%= image.image.thumb.url %>" alt="<%= image.title %>" /></a>&nbsp;&nbsp;
