@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     
     # System only supports 1 user, so first come, first served
     if user == nil
-      if User.count > 1
+      if User.count > 0
         redirect_to root_url, :notice => "Permission denied"
         return
       end
