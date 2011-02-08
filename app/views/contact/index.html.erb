@@ -1,2 +1,24 @@
-<h1>Contact#index</h1>
-<p>Find me in app/views/contact/index.html.erb</p>
+<% title "Contact" %>
+
+<h1 class="grid_12">Contact</h1>
+<p class="grid_12">Thanks for your interest!</p>
+
+<div id="contact_form" class="grid_6 prefix_3">
+	<%= form_tag do |f| %>
+		<p>	
+			<%= label_tag(:name, "Name: ")%>
+			<%= text_field_tag(:name, "", :size => 40) %>
+		</p>
+		<p>	
+			<%= label_tag(:email, "Email: ")%>
+			<%= text_field_tag(:email, "", :size => 40) %>
+		</p>
+
+		<p>	
+			<%= label_tag(:message, "Your carefully worded message: ")%><br/>
+			<%= text_area_tag(:message, "", :size => "50x12") %>
+		</p>
+
+		<p><%= submit_tag("Send", :id => "send_button") %></p>
+	<% end %>
+</div>

@@ -1,3 +1,6 @@
 class ContactMailer < ActionMailer::Base
-  default :from => "from@example.com"
+  def contact_message(params, user)
+    @params = params
+    mail(:to => user.email, :from => "#{params[:name]} <#{params[:email]}>", :subject => "Contact Message")
+  end
 end
