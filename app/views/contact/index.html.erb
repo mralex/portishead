@@ -5,6 +5,7 @@
 
 <div id="contact_form" class="grid_6 prefix_3">
 	<%= form_tag do |f| %>
+		<div class="banner"></div>
 		<p>	
 			<%= label_tag(:name, "Name: ")%>
 			<%= text_field_tag(:name, "", :size => 40) %>
@@ -20,5 +21,6 @@
 		</p>
 
 		<p><%= submit_tag("Send", :id => "send_button") %></p>
+		<div class="banner"></div>
 	<% end %>
 </div>
