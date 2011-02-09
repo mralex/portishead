@@ -5,8 +5,6 @@ body {
 	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dfdfdf));
 	background: -moz-linear-gradient(top, #fff, #dfdfdf);
 	color: #333;
-/*	letter-spacing: 0.06em;*/
-/*	text-rendering: optimizeLegibility;*/
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -19,7 +17,6 @@ h1, h2, h3, h4, h5 {
 }
 
 a, a:visited {
-/*	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);*/
 	color: #fff;
 }
 
@@ -76,9 +73,6 @@ a img {
 	color: #ccc;
 	padding-top: 21px;
 	width: 950px;
-/*	margin-left: -20px;*/
-/*	padding-right: 20px;*/
-/*	border-bottom: 1px solid #2a2a2a;*/
 }
 
 #subhead h5 {
@@ -111,7 +105,6 @@ a img {
 	font-weight: bold;
 	color: #111;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-/*	-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.17);*/
 }
 #project .links a {
 	background: rgba(0, 0, 0, 0.35);
@@ -122,13 +115,9 @@ a img {
 #project .links a:hover {
 	text-decoration: none;
 	background: rgba(47, 47, 59, 0.75);
-/*	-webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
-	-moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);*/
 }
 
 #pages a:hover {
-/*	-webkit-box-shadow: none;
-	-moz-box-shadow: none;*/
 	background: -webkit-gradient(linear, left top, left bottom, from(#80ffff), to(#00deff));
 	background: -moz-linear-gradient(top, #80ffff, #00deff)
 }
@@ -139,13 +128,7 @@ a img {
 	width: 95%;
 	margin: 0 auto;
 	margin-bottom: 40px;
-/*	background: rgba(29, 29, 31, 1);
-	-webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.9);
-	-moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	color: #fff;
-*/}
+}
 
 #index_hero .grid_12 {
 	position: relative;
@@ -181,11 +164,8 @@ a img {
 	bottom: 110px;
 	padding: 12px;
 	padding-right: 25px;
-/*	background: rgba(0, 0, 0, 0.75);*/
 	background: rgba(255, 255, 255, 0.95);
 	color: #000;
-	
-/*	-webkit-box-shadow: 2px 0 5px rgba(0, 0, 0, 0.25);*/
 }
 
 #we_can_be_heroes .details h2, #we_can_be_heroes .details p {
@@ -215,10 +195,6 @@ a img {
 }
 
 #project_info {
-/*	position: fixed;
-	top: 90px;
-	width: 300px;
-*/
 	position: relative;
 }
 
@@ -364,44 +340,41 @@ a img {
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#202020), color-stop(100%,#282828)); /* webkit */
 	padding: 10px;
 	margin-bottom: 40px;
-/*	-webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-	-moz-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-*/
--webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
--moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
 	
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 }
 
 #projects .project:after {
-z-index: -1;
-position: absolute;
-background: transparent;
-width: 70%;
-height: 55%;
-content: '';
-right: 18px;
-bottom: 15px;
--webkit-transform: skew(15deg) rotate(5deg);
--webkit-box-shadow: 5px 11px 6px rgba(0, 0, 0, 0.25);
--moz-transform: skew(15deg) rotate(5deg);
--moz-box-shadow: 6px 12px 8px rgba(0, 0, 0, 0.25); 
+	z-index: -1;
+	position: absolute;
+	background: transparent;
+	width: 70%;
+	height: 55%;
+	content: '';
+	right: 18px;
+	bottom: 15px;
+	-webkit-transform: skew(15deg) rotate(5deg);
+	-webkit-box-shadow: 5px 11px 6px rgba(0, 0, 0, 0.25);
+	-moz-transform: skew(15deg) rotate(5deg);
+	-moz-box-shadow: 6px 12px 8px rgba(0, 0, 0, 0.25); 
 }
 
 #projects .project:before {
-z-index: -2;
-position: absolute;
-background: transparent;
-width: 70%;
-height: 55%;
-content: '';
-left: 18px;
-bottom: 15px;
--webkit-transform: skew(-15deg) rotate(-5deg);
--webkit-box-shadow: -5px 11px 6px rgba(0, 0, 0, 0.25);
--moz-transform: skew(-15deg) rotate(-5deg);
--moz-box-shadow: -6px 12px 8px rgba(0, 0, 0, 0.25); 
+	z-index: -2;
+	position: absolute;
+	background: transparent;
+	width: 70%;
+	height: 55%;
+	content: '';
+	left: 18px;
+	bottom: 15px;
+	-webkit-transform: skew(-15deg) rotate(-5deg);
+	-webkit-box-shadow: -5px 11px 6px rgba(0, 0, 0, 0.25);
+	-moz-transform: skew(-15deg) rotate(-5deg);
+	-moz-box-shadow: -6px 12px 8px rgba(0, 0, 0, 0.25); 
 }
 
 #projects .project img {
@@ -608,10 +581,8 @@ li.image p {
 
 .dashboard_model {
 	position: relative;
-/*	background: rgba(0, 0, 0, 0.85);*/
 	background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#f0f0f0));
 	background: -moz-linear-gradient(top, #fafafa, #f0f0f0);
-/*	padding: 5px 10px 10px;*/
 	margin-bottom: 20px;
 	color: #333;
 	border: 1px solid #fff;
