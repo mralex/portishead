@@ -9,7 +9,7 @@ class ContactController < ApplicationController
       return
     end
     
-    ContactMailer.contact_message(params, current_user).deliver
+    ContactMailer.contact_message(params, User.first).deliver
     
     redirect_to(root_path, :notice => 'Your message has been delivered')
   end
