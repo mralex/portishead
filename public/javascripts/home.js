@@ -30,6 +30,8 @@ $(function() {
 					
 					$("#content_box").animate({opacity: 1},{duration: 400, queue: false});
 					
+					// Google Analytics Tracking, if it exists
+					if (typeof _gaq === "object") _gaq.push(['_trackPageview', url])
 				});
 			});
 			loaded = true;

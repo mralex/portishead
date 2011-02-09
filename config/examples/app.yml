@@ -9,4 +9,6 @@ social:
     flickr: USERNAME
     dribbble: USERNAME
     github: USERNAME
-    linkedin: /in/USERNAME
+    linkedin: /in/USERNAME  
+# Uncomment below to enable Google Analytics tracking
+# google_analytics: UA-PROPERTY-_ID
