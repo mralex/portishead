@@ -9,15 +9,18 @@
 		<p>	
 			<%= label_tag(:name, "Name: ")%>
 			<%= text_field_tag(:name, "", :size => 40) %>
+			<span class="error"></span>
 		</p>
 		<p>	
 			<%= label_tag(:email, "Email: ")%>
 			<%= text_field_tag(:email, "", :size => 40) %>
+			<span class="error"></span>
 		</p>
 
 		<p>	
 			<%= label_tag(:message, "Your carefully worded message: ")%><br/>
-			<%= text_area_tag(:message, "", :size => "50x12") %>
+			<%= text_area_tag(:message, "", :size => "50x12") %><br/>
+			<span class="error"></span>
 		</p>
 
 		<p><%= submit_tag("Send", :id => "send_button") %></p>
